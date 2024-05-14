@@ -11,22 +11,21 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Date;
 import Model.Produto;
 
 
-/**
- *
- * @author pedro
- */
+
 public class MouseDAO{ 
 public static ArrayList<Mouse> ListaMouse = new ArrayList<Mouse>();
 public int maiorID() throws SQLException{
     int maiorID = 0;
     try{
         java.sql.Statement stmt = this.getConexao().createStatement();
-        ResultSet res = stmt.executeQuery("SELECT MAX (id)id FROM tb_mouse"); //trocar
+        //troca
+        ResultSet res = stmt.executeQuery("SELECT MAX (id_Mouse) id_Mouse FROM produtos.tb_mouse"); 
         res.next();
-        maiorID= res.getInt("id");
+        maiorID= res.getInt("id_Mouse");
         stmt.close();
         
     }catch (SQLException ex){
@@ -39,21 +38,22 @@ public int maiorID() throws SQLException{
             //carregando do JDBC DRIVER
             String driver ="com.mysql.cj.jdbc.Driver";
             Class.forName(driver);
-            //configurar a conexao
-            String server = "localhost"; //caminho do MySQL
-            String database = "db_mouse";
-            String url = "jdbc:mysql://"+ server + ":3306"+ database + "?useTimezone=true&serverTimezone=UTC";
-            String user = "root";
-            String password = "rootpass";
+                 //configurar  conexao
+                    String server = "localhost"; //caminho do MySQL
+                    String database = "produtos";
+                    String url = "jdbc:mysql://"+ server + ":3306/"+ database + "?useTimezone=true&serverTimezone=UTC";
+                    String user = "root";
+                    String password = "rootpass";
             connection = DriverManager.getConnection(url,user,password);
-            //testando
-            if (connection !=null){System.out.println("Status: conectado!");
+           
+            
+        if (connection !=null){System.out.println("Status: Conectado!");
             
             }else{System.out.println("Status: NÃO CONECTADO!");
             
             }
             return connection;
-      } catch (ClassNotFoundException e) {  //Driver n�o encontrado
+      } catch (ClassNotFoundException e) {  //driver nao  foi encontrado
             System.out.println("O driver nao foi encontrado. " + e.getMessage());
             return null;
 
@@ -63,30 +63,35 @@ public int maiorID() throws SQLException{
         }
     }
 
-    // Retorna a Lista de mouses(objetos)
+    // Retorna a Lista de mouses
     public ArrayList getListaMouse() {
 
         ListaMouse.clear(); // Limpa nosso ArrayList
 
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM tb_mouse");
+            ResultSet res = stmt.executeQuery("SELECT * FROM peodutos.tb_mouse");
             while (res.next()) {
-                int botoes = res.getInt("botões");                
-                int dpi = res.getInt("dpi");
-                int dimensao = res.getInt("dimensão");
-                int rate = res.getInt("polling rate");
-                int peso = res.getInt("peso");
-                float cabo = res.getFloat("cabo");
-                String tipo = res.getString("tipo");
-                String descricao = res.getString("descrição");
-                int id = res.getInt("id");
+                 int id = res.getInt("id");
                 String nome = res.getString("nome");
+                String tipo = res.getString("tipo");
                 float preco = res.getFloat("preco");
                 String marca = res.getString("marca");
                 String modelo = res.getString("modelo");
+                int qtd_estoque = res.getInt("quantidade estoque");
+                String data_cadastro = res.getString("data"); 
+                int botoes = res.getInt("botoes");                
+                int dpi = res.getInt("dpi");
+                String dimensao = res.getString("dimensão");
+                int rate = res.getInt("polling rate");
+                int peso = res.getInt("peso");
+                float cabo = res.getFloat("cabo");
+                
+                String descricao = res.getString("descrição");
+               
 
-                Mouse objeto = new Mouse(botoes,dpi,dimensao,rate,peso,cabo,id,nome, tipo, preco, descricao, marca, modelo);
+                Mouse objeto = new Mouse(botoes,dpi,dimensao,rate,peso,cabo,id,nome, tipo, preco, descricao, marca, modelo,qtd_estoque,
+                data_cadastro);
 
                 ListaMouse.add(objeto);
             }
@@ -99,9 +104,9 @@ public int maiorID() throws SQLException{
         return ListaMouse;
     }
 
-    // Cadastra novo aluno
+    // Cadastra novo Mouse
     public boolean InsertMouseBD(Mouse objeto) {
-        String sql = "INSERT INTO tb_Mouse(id,nome,idade,curso,fase) VALUES(?,?,?,?,?)";  //<<<<----------------
+        String sql = "INSERT INTO produtos.tb_Mouse(id_Mouse,nome, tipo, preco, marca, modelo, qtd_estoque, data_cadastro,botoes,dpi,dimensao,rate,peso,cabo, descricao)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -110,17 +115,18 @@ public int maiorID() throws SQLException{
             stmt.setInt(1, objeto.getId());
             stmt.setString(2, objeto.getNome());
             stmt.setString(3, objeto.getTipo());
-            stmt.setDouble(4, objeto.getPreco());                        
-            stmt.setInt(5, objeto.getBotoes());
-            stmt.setInt(6, objeto.getDpi());
-            stmt.setInt(7, objeto.getDimensao());
-            stmt.setInt(8, objeto.getrate());
-            stmt.setInt(9, objeto.getpeso());
-            stmt.setFloat(10, objeto.getcabo());
-            stmt.setString(11, objeto.getModelo());
-            stmt.setString(12, objeto.getMarca());
-            stmt.setString(13, objeto.getDescricao());
-
+            stmt.setFloat(4, objeto.getPreco());                                   
+            stmt.setString(5, objeto.getMarca());
+            stmt.setString(6, objeto.getModelo());            
+            stmt.setString(7,objeto.getData_cadastro());
+            stmt.setString(8, objeto.getDimensao());
+            stmt.setInt(9, objeto.getBotoes());
+            stmt.setInt(10, objeto.getDpi());
+            stmt.setString(11, objeto.getDimensao());
+            stmt.setInt(12, objeto.getRate());
+            stmt.setInt(13, objeto.getPeso());
+            stmt.setFloat(14, objeto.getCabo());
+            stmt.setString(15, objeto.getDescricao());
             stmt.execute();
             stmt.close();
 
@@ -136,7 +142,7 @@ public int maiorID() throws SQLException{
     public boolean DeleteMouseBD(int id) {
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            stmt.executeUpdate("DELETE FROM tb_mouse WHERE id = " + id);
+            stmt.executeUpdate("DELETE FROM produtos.tb_mouse WHERE id_Mouse " + id);
             stmt.close();
 
         } catch (SQLException erro) {
@@ -145,27 +151,31 @@ public int maiorID() throws SQLException{
         return true;
     }
 
-    // Edita um teclado espec�fico pelo seu campo ID
+    // Edita um Mouse especifico pelo seu campo ID
     public boolean UpdateMouseBD(Mouse objeto) {
 
-        String sql = "UPDATE tb_mouse set nome = ? ,idade = ? ,curso = ? ,fase = ? WHERE id = ?";
+        String sql = "UPDATE produtos.tb_mouse set nome = ? ,tipo = ? , preco = ? , marca = ? , modelo = ? , qtd_estoque = ?, data_cadastro = ?, botoes = ?, dpi = ? ,dimensao = ? ,rate = ? ,peso = ? ,cabo = ? , descricao = ? WHERE id_Mouse = ?";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
 
             stmt.setString(1, objeto.getNome());
             stmt.setString(2, objeto.getTipo());
-            stmt.setDouble(3, objeto.getPreco());
-            stmt.setInt(4, objeto.getBotoes());
-            stmt.setInt(5, objeto.getDpi());
-            stmt.setInt(6, objeto.getDimensao());
-            stmt.setInt(7, objeto.getrate());
-            stmt.setInt(8, objeto.getpeso());
-            stmt.setFloat(9, objeto.getcabo());
-            stmt.setString(10, objeto.getModelo());
-            stmt.setString(11, objeto.getMarca());
-            stmt.setString(12, objeto.getDescricao());
-            stmt.setInt(13, objeto.getId());
+            stmt.setFloat(3, objeto.getPreco());
+            stmt.setString(4, objeto.getMarca());
+            stmt.setString(5, objeto.getModelo());
+            stmt.setInt(6, objeto.getQtd_estoque());
+            stmt.setString(7, objeto.getData_cadastro());
+            stmt.setInt(8, objeto.getBotoes());
+            stmt.setInt(9, objeto.getDpi());
+            stmt.setString(10, objeto.getDimensao());
+            stmt.setInt(11, objeto.getRate());
+            stmt.setInt(12, objeto.getPeso());
+            stmt.setFloat(13, objeto.getCabo());
+            stmt.setString(14, objeto.getDescricao());
+            stmt.setInt(15, objeto.getId());
+            
+            
 
             stmt.execute();
             stmt.close();
@@ -185,20 +195,24 @@ public int maiorID() throws SQLException{
 
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM tb_Mouse WHERE id = " + id);
+            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_Mouse WHERE id_Mouse = " + id);
             res.next();
 
-            objeto.setNome(res.getString("nome"));
-            objeto.setPreco(res.getFloat("preco"));
-            objeto.setTipo(res.getString("tipo"));
-            objeto.setBotoes(res.getInt("Botoes"));
-            objeto.setDpi(res.getInt("Dpi"));
-            objeto.setDimensao(res.getInt("Dimensao"));
-            objeto.setRate(res.getInt("Pollingrate"));
-            objeto.setPeso(res.getInt("Peso"));
-            objeto.setCabo(res.getFloat("Cabo"));
-            objeto.setMarca(res.getString("marca"));
-            objeto.setDescricao(res.getString("descricao"));
+           objeto.setNome (res.getString("nome"));
+           objeto.setTipo (res.getString("tipo"));
+           objeto.setPreco(res.getFloat("preco"));
+           objeto.setMarca (res.getString("marca"));
+           objeto.setModelo (res.getString("modelo"));
+           objeto.setQtd_estoque (res.getInt("quantidade estoque"));
+           objeto.setData_cadastro (res.getString("data")); 
+           objeto.setBotoes (res.getInt("botoes"));                
+           objeto.setDpi ( res.getInt("dpi"));
+           objeto.setDimensao (res.getString("dimensão"));
+           objeto.setRate (res.getInt("polling rate"));
+           objeto.setPeso (res.getInt("peso"));
+           objeto.setCabo (res.getFloat("cabo"));
+                
+           objeto.setDescricao(res.getString("descrição"));
             //fecha declaraçao
             stmt.close();
 

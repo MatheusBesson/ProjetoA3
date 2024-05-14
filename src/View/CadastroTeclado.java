@@ -50,7 +50,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         Label_qtdestoqueTeclado_CT = new javax.swing.JLabel();
         qtdestoque_CT = new javax.swing.JTextField();
         Label_datadecadastroTeclado_CT = new javax.swing.JLabel();
-        datacadastro_CT = new com.toedter.calendar.JDateChooser();
         Label_descricaoTeclado_CT = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descricao_CT = new javax.swing.JTextArea();
@@ -58,7 +57,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         Label_conectividadeTeclado_CT = new javax.swing.JLabel();
         dimensao_CT = new javax.swing.JTextField();
         conectividade_CT = new javax.swing.JTextField();
-        linguagem_CT = new com.toedter.components.JLocaleChooser();
         b_cancelar_CT = new javax.swing.JButton();
         b_cadastrar_CT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -77,7 +75,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Teclado");
         setMinimumSize(new java.awt.Dimension(800, 550));
-        setPreferredSize(new java.awt.Dimension(800, 520));
         setSize(new java.awt.Dimension(800, 550));
         getContentPane().setLayout(null);
 
@@ -151,11 +148,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         getContentPane().add(Label_datadecadastroTeclado_CT);
         Label_datadecadastroTeclado_CT.setBounds(58, 320, 107, 16);
 
-        datacadastro_CT.setBackground(new java.awt.Color(204, 204, 204));
-        datacadastro_CT.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(datacadastro_CT);
-        datacadastro_CT.setBounds(194, 320, 100, 22);
-
         Label_descricaoTeclado_CT.setForeground(new java.awt.Color(255, 255, 255));
         Label_descricaoTeclado_CT.setText("Descrição(Opcional):");
         getContentPane().add(Label_descricaoTeclado_CT);
@@ -186,15 +178,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         conectividade_CT.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(conectividade_CT);
         conectividade_CT.setBounds(500, 370, 177, 22);
-
-        linguagem_CT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "português (Brasil)", "english (UK)" }));
-        linguagem_CT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                linguagem_CTActionPerformed(evt);
-            }
-        });
-        getContentPane().add(linguagem_CT);
-        linguagem_CT.setBounds(547, 28, 213, 24);
 
         b_cancelar_CT.setText("Cancelar");
         b_cancelar_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +250,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipo_CT);
-        tipo_CT.setBounds(650, 70, 100, 24);
+        tipo_CT.setBounds(650, 70, 100, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -479,7 +462,6 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JButton b_cadastrar_CT;
     private javax.swing.JButton b_cancelar_CT;
     private javax.swing.JTextField conectividade_CT;
-    private com.toedter.calendar.JDateChooser datacadastro_CT;
     private javax.swing.JTextArea descricao_CT;
     private javax.swing.JTextField dimensao_CT;
     private javax.swing.JPanel jPanel1;
@@ -492,7 +474,6 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.toedter.components.JLocaleChooser linguagem_CT;
     private javax.swing.JTextField marca_CT;
     private javax.swing.JTextField modelo_CT;
     private javax.swing.JTextField nome_CT;

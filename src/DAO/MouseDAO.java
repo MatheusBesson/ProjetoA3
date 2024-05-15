@@ -81,16 +81,12 @@ public int maiorID() throws SQLException{
                 int qtd_estoque = res.getInt("quantidade estoque");
                 String data_cadastro = res.getString("data"); 
                 int botoes = res.getInt("botoes");                
-                int dpi = res.getInt("dpi");
-                String dimensao = res.getString("dimensão");
-                int rate = res.getInt("polling rate");
-                int peso = res.getInt("peso");
-                float cabo = res.getFloat("cabo");
+                int dpi = res.getInt("dpi");               
                 
                 String descricao = res.getString("descrição");
                
 
-                Mouse objeto = new Mouse(botoes,dpi,dimensao,rate,peso,cabo,id,nome, tipo, preco, descricao, marca, modelo,qtd_estoque,
+                Mouse objeto = new Mouse(botoes,dpi,id,nome, tipo, preco, descricao, marca, modelo,qtd_estoque,
                 data_cadastro);
 
                 ListaMouse.add(objeto);
@@ -106,7 +102,7 @@ public int maiorID() throws SQLException{
 
     // Cadastra novo Mouse
     public boolean InsertMouseBD(Mouse objeto) {
-        String sql = "INSERT INTO produtos.tb_Mouse(id_Mouse,nome, tipo, preco, marca, modelo, qtd_estoque, data_cadastro,botoes,dpi,dimensao,rate,peso,cabo, descricao)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO produtos.tb_Mouse(id_Mouse,nome, tipo, preco, marca, modelo, qtd_estoque, data_cadastro,botoes,dpi)VALUES(?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -118,15 +114,10 @@ public int maiorID() throws SQLException{
             stmt.setFloat(4, objeto.getPreco());                                   
             stmt.setString(5, objeto.getMarca());
             stmt.setString(6, objeto.getModelo());            
-            stmt.setString(7,objeto.getData_cadastro());
-            stmt.setString(8, objeto.getDimensao());
-            stmt.setInt(9, objeto.getBotoes());
-            stmt.setInt(10, objeto.getDpi());
-            stmt.setString(11, objeto.getDimensao());
-            stmt.setInt(12, objeto.getRate());
-            stmt.setInt(13, objeto.getPeso());
-            stmt.setFloat(14, objeto.getCabo());
-            stmt.setString(15, objeto.getDescricao());
+            stmt.setString(7,objeto.getData_cadastro());          
+            stmt.setInt(8, objeto.getBotoes());
+            stmt.setInt(9, objeto.getDpi());           
+            stmt.setString(10, objeto.getDescricao());
             stmt.execute();
             stmt.close();
 
@@ -154,7 +145,7 @@ public int maiorID() throws SQLException{
     // Edita um Mouse especifico pelo seu campo ID
     public boolean UpdateMouseBD(Mouse objeto) {
 
-        String sql = "UPDATE produtos.tb_mouse set nome = ? ,tipo = ? , preco = ? , marca = ? , modelo = ? , qtd_estoque = ?, data_cadastro = ?, botoes = ?, dpi = ? ,dimensao = ? ,rate = ? ,peso = ? ,cabo = ? , descricao = ? WHERE id_Mouse = ?";
+        String sql = "UPDATE produtos.tb_mouse set nome = ? ,tipo = ? , preco = ? , marca = ? , modelo = ? , qtd_estoque = ?, data_cadastro = ?, botoes = ?, dpi = ? , descricao = ? WHERE id_Mouse = ?";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -168,12 +159,8 @@ public int maiorID() throws SQLException{
             stmt.setString(7, objeto.getData_cadastro());
             stmt.setInt(8, objeto.getBotoes());
             stmt.setInt(9, objeto.getDpi());
-            stmt.setString(10, objeto.getDimensao());
-            stmt.setInt(11, objeto.getRate());
-            stmt.setInt(12, objeto.getPeso());
-            stmt.setFloat(13, objeto.getCabo());
-            stmt.setString(14, objeto.getDescricao());
-            stmt.setInt(15, objeto.getId());
+            stmt.setString(10, objeto.getDescricao());
+            stmt.setInt(11, objeto.getId());
             
             
 
@@ -207,10 +194,7 @@ public int maiorID() throws SQLException{
            objeto.setData_cadastro (res.getString("data")); 
            objeto.setBotoes (res.getInt("botoes"));                
            objeto.setDpi ( res.getInt("dpi"));
-           objeto.setDimensao (res.getString("dimensão"));
-           objeto.setRate (res.getInt("polling rate"));
-           objeto.setPeso (res.getInt("peso"));
-           objeto.setCabo (res.getFloat("cabo"));
+           
                 
            objeto.setDescricao(res.getString("descrição"));
             //fecha declaraçao

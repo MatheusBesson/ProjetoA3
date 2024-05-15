@@ -13,10 +13,6 @@ import java.util.ArrayList;
 public class Mouse extends Produto{
 private int botoes; //qnts botoes
 private int dpi;
-private String dimensao; 
-private int rate; //qnts hz
-private int peso; //gramas
-private float cabo; //em metros
 private final MouseDAO dao;
     public Mouse() {
         this.dao = new MouseDAO();
@@ -24,25 +20,19 @@ private final MouseDAO dao;
 
 // Método Construtor de Objeto, inserindo dados
 
-    public Mouse(int botoes, int dpi, String dimensao, int rate, int peso, float cabo, MouseDAO dao) {
+    public Mouse(int botoes, int dpi, MouseDAO dao) {
         this.botoes = botoes;
         this.dpi = dpi;
-        this.dimensao = dimensao;
-        this.rate = rate;
-        this.peso = peso;
-        this.cabo = cabo;
+        
         this.dao=new MouseDAO();
     }
 
-    public Mouse(int botoes, int dpi, String dimensao, int rate, int peso, float cabo, int id, String nome, String tipo, float preco, String descricao, String marca, String modelo,
+    public Mouse(int botoes, int dpi, int id, String nome, String tipo, float preco, String descricao, String marca, String modelo,
             int qtd_estoque, String data_cadastro) {
         super(id, nome, tipo, preco, descricao, marca, modelo,qtd_estoque,  data_cadastro);
         this.botoes = botoes;
         this.dpi = dpi;
-        this.dimensao = dimensao;
-        this.rate = rate;
-        this.peso = peso;
-        this.cabo = cabo;
+        
         this.dao = new MouseDAO();
     }
 
@@ -64,38 +54,7 @@ private final MouseDAO dao;
         this.dpi = dpi;
     }
 
-    public String getDimensao() {
-        return dimensao;
-    }
-
-    public void setDimensao(String dimensao) {
-        this.dimensao = dimensao;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public void setRate(int rate) {
-        this.rate = rate;
-    }
-
-    public int getPeso() {
-        return peso;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-    public float getCabo() {
-        return cabo;
-    }
-
-    public void setCabo(float cabo) {
-        this.cabo = cabo;
-    }
-
+    
 
 
 
@@ -106,11 +65,7 @@ private final MouseDAO dao;
                 + "\n Preço: " + this.getPreco()
                 + "\n Tipo: " + this.getTipo()               
                 +"\n Botões: " + this.getBotoes()                
-                +"\n Dpi: " + this.getDpi()
-                +"\n Dimensão: " + this.getDimensao()
-                +"\n Polling Rate: " + this.getRate()
-                +"\n Peso: " + this.getPeso()
-                +"\n Cabo: " + this.getCabo()
+                +"\n Dpi: " + this.getDpi()                
                 +"\n Modelo: " + this.getModelo()
                 +"\n Marca: " + this.getMarca()
                 + "\n Descrição:" + this.getDescricao()
@@ -127,10 +82,10 @@ private final MouseDAO dao;
     }
 
     // Cadastrar  novo Mouse
-    public boolean InsertMouseBD(int botoes,int dpi,String dimensao,int rate,int peso,float cabo, String nome,String tipo, float preco, String descricao, String marca, String modelo,int qtd_estoque, String data_cadastro)
+    public boolean InsertMouseBD(int botoes,int dpi, String nome,String tipo, float preco, String descricao, String marca, String modelo,int qtd_estoque, String data_cadastro)
     throws SQLException{    
 int id = this.maiorID() + 1;
-        Mouse objeto = new Mouse(botoes,dpi,dimensao, rate, peso,cabo,id,nome,tipo,preco,descricao,marca,modelo,qtd_estoque,data_cadastro);
+        Mouse objeto = new Mouse(botoes,dpi,id,nome,tipo,preco,descricao,marca,modelo,qtd_estoque,data_cadastro);
         dao.InsertMouseBD(objeto);
         return true;
 

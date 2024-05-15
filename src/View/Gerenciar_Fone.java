@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import java.time.LocalDate;
 import com.toedter.calendar.JDateChooser;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class Gerenciar_Fone extends javax.swing.JFrame {
@@ -40,21 +41,14 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         c_marca = new javax.swing.JTextField();
         c_modelo = new javax.swing.JTextField();
         c_qtd_estoque = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        c_resposta_frequencia = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        c_microfone = new javax.swing.JTextField();
         c_nome = new javax.swing.JTextField();
-        c_sensibilidade = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         c_material = new javax.swing.JTextField();
         c_tipo = new javax.swing.JTextField();
         c_preco = new javax.swing.JTextField();
-        c_cor = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         b_cancelar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -62,26 +56,25 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         c_descricao = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         b_apagar = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
-        c_bateria = new javax.swing.JTextField();
         c_data = new com.toedter.calendar.JDateChooser();
+        c_conectividade = new javax.swing.JComboBox<>();
 
         setTitle("Gerenciamento Fone de Ouvido");
         setAlwaysOnTop(true);
 
         jTableFone.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Tipo", "Preço", "Descrição", "Marca", "Modelo", "Qtd. Estoque", "Data Cadastro", "Resp. Frequencia", "Microfone", "Sensibilidade", "Material", "Cor", "Dur. Bateria"
+                "ID", "Nome", "Tipo", "Preço", "Descrição", "Marca", "Modelo", "Qtd. Estoque", "Data Cadastro", "Conectividade do fone", "Material"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -101,15 +94,9 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
 
         jLabel8.setText("Data de Cadastro:");
 
-        jLabel9.setText("Resposta de Frequencia:");
-
-        jLabel10.setText("Microfone:");
-
-        jLabel11.setText("Sensibilidade:");
+        jLabel11.setText("conectividade do fone:");
 
         jLabel12.setText("Material:");
-
-        jLabel13.setText("Cor:");
 
         jLabel1.setText("Nome:");
 
@@ -148,9 +135,9 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             }
         });
 
-        jLabel14.setText("Duração da Bateria:");
-
         c_data.setDateFormatString("dd '/' MM '/' y");
+
+        c_conectividade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Com fio", "Sem fio" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -175,27 +162,16 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                             .addComponent(c_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_sensibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(c_conectividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(c_material, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(c_bateria, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(c_cor, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(c_microfone, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(c_material, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(8, 8, 8)
-                        .addComponent(c_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel14))
+                        .addComponent(c_data, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -206,10 +182,6 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(c_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_resposta_frequencia, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,10 +228,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                     .addComponent(c_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8)
-                        .addComponent(jLabel9)
-                        .addComponent(c_resposta_frequencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8)
                     .addComponent(c_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -268,36 +237,20 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                             .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(c_microfone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(c_sensibilidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(c_conectividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
                             .addComponent(c_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(b_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(c_cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(c_bateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(40, 40, 40))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(b_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b_apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49))
         );
 
         pack();
@@ -322,14 +275,10 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             String marca = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 5).toString();
             String modelo = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 6).toString();
             String qtd_estoque = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 7).toString();
-            String data_cadastro = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 8).toString();
-            String resposta_de_frequencia = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 9).toString();
-            String microfone = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 10).toString();
-            String sensibilidade = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 11).toString();
-            String material = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 12).toString();
-            String cor = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 13).toString();
-            String duracao_da_bateria = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 14).toString();
-            
+            String data_cadastroString = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 8).toString();          
+            String conectividade_do_fone = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 9).toString();
+            String material = this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 10).toString();
+            Date data_cadastro = null;
 
             this.c_nome.setText(nome);
             this.c_tipo.setText(tipo);
@@ -338,13 +287,14 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             this.c_marca.setText(marca);
             this.c_modelo.setText(modelo);
             this.c_qtd_estoque.setText(qtd_estoque);
-            this.c_data.setDate(java.sql.Date.valueOf(data_cadastro));
-            this.c_resposta_frequencia.setText(resposta_de_frequencia);
-            this.c_microfone.setText(microfone);
-            this.c_sensibilidade.setText(sensibilidade);
+            try {
+                data_cadastro = new SimpleDateFormat("dd/MM/yyyy").parse(data_cadastroString);
+            } catch (ParseException ex) {
+                JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");               
+            }
+            this.c_data.setDate(data_cadastro);
+            this.c_conectividade.setSelectedItem(conectividade_do_fone);
             this.c_material.setText(material);
-            this.c_cor.setText(cor);
-            this.c_bateria.setText(duracao_da_bateria);
 
         }
     }//GEN-LAST:event_jTableFoneMouseClicked
@@ -361,15 +311,13 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             String modelo = "";
             int qtd_estoque =  0;       
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            String data_cadastro = sdf.format(c_data.getDate());
-            String resposta_de_frequencia = "";
-            String sensibilidade = "";
-            String microfone = "";
+            String data_cadastro = sdf.format(c_data.getDate());           
+            String conectividade_do_fone = "";
             String material = "";
-            String cor = "";
-            String duracao_da_bateria = "";
             
-            if (this.c_nome.getText().length() < 2 && this.c_nome.getText().length() > 45 ) {
+            
+            
+            if (this.c_nome.getText().length() < 2 || this.c_nome.getText().length() > 45 ) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 nome = this.c_nome.getText();
@@ -384,7 +332,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             } else {
                 preco = Float.parseFloat(this.c_preco.getText());
             }
-            if (this.c_descricao.getText().length() < 5 && this.c_descricao.getText().length() >250) {
+            if (this.c_descricao.getText().length() < 5 || this.c_descricao.getText().length() >250) {
                 throw new Mensagens("Descrição deve conter ao menos 5 caracteres e menos de 250 caracteres.");
             } else {
                 descricao = this.c_descricao.getText();
@@ -399,54 +347,34 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             } else {
                 qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
             } 
-            if (this.c_marca.getText().length() < 2 && this.c_marca.getText().length() > 45 ) {
+            if (this.c_marca.getText().length() < 2 || this.c_marca.getText().length() > 45 ) {
                 throw new Mensagens("Marca deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 marca = this.c_marca.getText();
             }
-            if (this.c_modelo.getText().length() < 2 && this.c_modelo.getText().length() > 45 ) {
+            if (this.c_modelo.getText().length() < 2 || this.c_modelo.getText().length() > 45 ) {
                 throw new Mensagens("Modelo deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 modelo = this.c_modelo.getText();
             }
-            if (this.c_resposta_frequencia.getText().length() < 2 && this.c_resposta_frequencia.getText().length() > 45 ) {
-                throw new Mensagens("Resposta de frequencia deve conter ao menos 2 caracteres e menos de 45 caracteres.");
+            if (this.c_conectividade.getSelectedItem().toString().length() < 2 || this.c_conectividade.getSelectedItem().toString().length() > 45 ) {
+                throw new Mensagens("conectividade do fone deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
-                resposta_de_frequencia = this.c_resposta_frequencia.getText();
+                conectividade_do_fone = this.c_conectividade.getSelectedItem().toString();
             }
-            if (this.c_sensibilidade.getText().length() < 2 && this.c_sensibilidade.getText().length() > 45 ) {
-                throw new Mensagens("Sensibilidade deve conter ao menos 2 caracteres e menos de 45 caracteres.");
-            } else {
-                sensibilidade = this.c_sensibilidade.getText();
-            }
-            if (this.c_microfone.getText().length() < 2 && this.c_microfone.getText().length() > 45 ) {
-                throw new Mensagens("Microfone deve conter ao menos 2 caracteres e menos de 45 caracteres.");
-            } else {
-                microfone = this.c_microfone.getText();
-            }
-            if (this.c_material.getText().length() < 2 && this.c_material.getText().length() > 45 ) {
+            if (this.c_material.getText().length() < 2 || this.c_material.getText().length() > 45 ) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 material = this.c_material.getText();
             }
-            if (this.c_cor.getText().length() < 2 && this.c_cor.getText().length() > 45 ) {
-                throw new Mensagens("Cor deve conter ao menos 2 caracteres e menos de 45 caracteres.");
-            } else {
-                cor = this.c_cor.getText();
-            }
-            if (this.c_bateria.getText().length() > 45 ) {
-                throw new Mensagens("Duração da Bateria deve ter menos de 45 caracteres.");
-            } else {
-                duracao_da_bateria = this.c_bateria.getText();
-            }
+            
             if (this.jTableFone.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Aluno para Alterar");
+                throw new Mensagens("Primeiro Selecione um Fone para Alterar");
             } else {
                 id = Integer.parseInt(this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 0).toString());
             }
             // envia os dados para o Fone processar
-            if (this.objFone.UpdateFoneBD(resposta_de_frequencia, microfone, sensibilidade, material, cor,
-            duracao_da_bateria, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro)) {
+            if (this.objFone.UpdateFoneBD(conectividade_do_fone, material, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro)) {
                 JOptionPane.showMessageDialog(rootPane, "Fone de Ouvido Alterado com Sucesso!");
                 
             // limpa campos da interface
@@ -457,13 +385,10 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 this.c_marca.setText("");
                 this.c_modelo.setText("");
                 this.c_qtd_estoque.setText("");
-                this.c_data.setDate(null);
-                 this.c_resposta_frequencia.setText("");
-                this.c_sensibilidade.setText("");
-                this.c_microfone.setText("");
+                this.c_data.setDate(null);               
+                this.c_conectividade.setSelectedItem("");           
                 this.c_material.setText("");
-                this.c_cor.setText("");
-                this.c_bateria.setText("");
+               
                 
         
         }  
@@ -504,14 +429,10 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 this.c_marca.setText("");
                 this.c_modelo.setText("");
                 this.c_qtd_estoque.setText("");
-                this.c_data.setDate(null);
-                 this.c_resposta_frequencia.setText("");
-                this.c_sensibilidade.setText("");
-                this.c_microfone.setText("");
-                this.c_material.setText("");
-                this.c_cor.setText("");
-                this.c_bateria.setText("");
-                    JOptionPane.showMessageDialog(rootPane, "Aluno Apagado com Sucesso!");
+                this.c_data.setDate(null);    
+                this.c_conectividade.setSelectedItem("");
+                this.c_material.setText("");               
+                    JOptionPane.showMessageDialog(rootPane, "Fone de Ouvido Apagado com Sucesso!");
 
                 }
 
@@ -543,14 +464,9 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 a.getMarca(),
                 a.getModelo(),
                 a.getQtd_estoque(),
-                a.getData_cadastro(),
-                a.getResposta_de_frequencia(),
-                a.getMicrofone(),
-                a.getSensibilidade(),
-                a.getMaterial(),
-                a.getCor(),
-                a.getDuracao_da_bateria(),
-                 
+                a.getData_cadastro(),              
+                a.getConectividade_do_fone(),
+                a.getMaterial(),  
             });
         }
     }
@@ -595,26 +511,19 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
     private javax.swing.JButton b_alterar;
     private javax.swing.JButton b_apagar;
     private javax.swing.JButton b_cancelar;
-    private javax.swing.JTextField c_bateria;
-    private javax.swing.JTextField c_cor;
+    private javax.swing.JComboBox<String> c_conectividade;
     private com.toedter.calendar.JDateChooser c_data;
     private javax.swing.JTextField c_descricao;
     private javax.swing.JTextField c_marca;
     private javax.swing.JTextField c_material;
-    private javax.swing.JTextField c_microfone;
     private javax.swing.JTextField c_modelo;
     private javax.swing.JTextField c_nome;
     private javax.swing.JTextField c_preco;
     private javax.swing.JTextField c_qtd_estoque;
-    private javax.swing.JTextField c_resposta_frequencia;
-    private javax.swing.JTextField c_sensibilidade;
     private javax.swing.JTextField c_tipo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -622,7 +531,6 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableFone;
     // End of variables declaration//GEN-END:variables

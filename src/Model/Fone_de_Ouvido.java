@@ -9,12 +9,9 @@ public class Fone_de_Ouvido extends Produto {
     
     
     
-    private String resposta_de_frequencia;
-    private String microfone; //microfone destacavel ou integrado
-    private String sensibilidade;
+    
+    private String conectividade_do_fone; //Com fio ou sem fio
     private String material;
-    private String cor;
-    private String duracao_da_bateria; //caso aplicavel
     private final Fone_de_OuvidoDAO dao;
     
     // M�todo Construtor de Objeto Vazio
@@ -24,55 +21,32 @@ public class Fone_de_Ouvido extends Produto {
     
     // M�todo Construtor de Objeto, inserindo dados
 
-    public Fone_de_Ouvido(String resposta_de_frequencia, String microfone, String sensibilidade, String material,
-           String cor, String duracao_da_bateria) {
-        this.resposta_de_frequencia = resposta_de_frequencia;
-        this.microfone = microfone;
-        this.sensibilidade = sensibilidade;
-        this.material = material;
-        this.cor = cor;
-        this.duracao_da_bateria = duracao_da_bateria;
-        this.dao = new Fone_de_OuvidoDAO(); // inicializado n�o importa em qual construtor
+    public Fone_de_Ouvido(String conectividade_do_fone, String material) {
+        
+        this.conectividade_do_fone = conectividade_do_fone;
+        this.material = material;       
+        this.dao = new Fone_de_OuvidoDAO(); // inicializado nao importa em qual construtor
     }
     
     // M�todo Construtor usando tamb�m o construtor da SUPERCLASSE
-    public Fone_de_Ouvido(String resposta_de_frequencia, String microfone, String sensibilidade, String material,
-           String cor, String duracao_da_bateria, int id, String nome, String tipo,float preco,
-           String descricao, String marca, String modelo, int qtd_estoque, Date data_cadastro) {
+    public Fone_de_Ouvido(String conectividade_do_fone, String material, int id, String nome, String tipo,float preco,
+           String descricao, String marca, String modelo, int qtd_estoque, String data_cadastro) {
             
-        super(id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
-        this.resposta_de_frequencia = resposta_de_frequencia;
-        this.microfone = microfone;
-        this.sensibilidade = sensibilidade;
+        super(id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);       
         this.material = material;
-        this.cor = cor;
-        this.duracao_da_bateria = duracao_da_bateria;
+        this.conectividade_do_fone = conectividade_do_fone;
+        
         this.dao = new Fone_de_OuvidoDAO(); // inicializado n�o importa em qual construtor
     
     }
 
-    public String getResposta_de_frequencia() {
-        return resposta_de_frequencia;
+
+    public String getConectividade_do_fone() {
+        return conectividade_do_fone;
     }
 
-    public void setResposta_de_frequencia(String resposta_de_frequencia) {
-        this.resposta_de_frequencia = resposta_de_frequencia;
-    }
-
-    public String getMicrofone() {
-        return microfone;
-    }
-
-    public void setMicrofone(String microfone) {
-        this.microfone = microfone;
-    }
-
-    public String getSensibilidade() {
-        return sensibilidade;
-    }
-
-    public void setSensibilidade(String sensibilidade) {
-        this.sensibilidade = sensibilidade;
+    public void setConectividade_do_fone(String conectividade_do_fone) {
+        this.conectividade_do_fone = conectividade_do_fone;
     }
 
     public String getMaterial() {
@@ -83,31 +57,14 @@ public class Fone_de_Ouvido extends Produto {
         this.material = material;
     }
 
-    public String getCor() {
-        return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
-
-    public String getDuracao_da_bateria() {
-        return duracao_da_bateria;
-    }
-
-    public void setDuracao_da_bateria(String duracao_da_bateria) {
-        this.duracao_da_bateria = duracao_da_bateria;
-    }
+   
     
     @Override
     public String toString() {
         return  "\n"+ super.toString()
-        + "\n Resposta_de_frequencia " + this.getResposta_de_frequencia()
-        + "\n Microfone " + this.getMicrofone()
-        + "\n Sensibilidade " + this.getSensibilidade()
-        + "\n Material " + this.getMaterial()
-        + "\n Cor " + this.getCor()
-        + "\n Duração da Bateria " + this.getDuracao_da_bateria();
+        + "\n conectividade_do_fone " + this.getConectividade_do_fone()
+        + "\n Material " + this.getMaterial();
+        
     }
 /*
     
@@ -122,12 +79,10 @@ public class Fone_de_Ouvido extends Produto {
 
     }
     // Cadastra novo Fone
-    public boolean InsertFoneBD(String resposta_de_frequencia, String microfone, String sensibilidade,
-            String material, String cor, String duracao_da_bateria,String nome, String tipo, float preco,
-            String descricao, String marca, String modelo, int qtd_estoque, Date data_cadastro) throws SQLException {
+    public boolean InsertFoneBD( String conectividade_do_fone, String material,String nome, String tipo, float preco,
+            String descricao, String marca, String modelo, int qtd_estoque, String data_cadastro) throws SQLException {
         int id = this.maiorID() + 1;
-        Fone_de_Ouvido objeto = new Fone_de_Ouvido(resposta_de_frequencia, microfone, sensibilidade, material, cor,
-        duracao_da_bateria, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
+        Fone_de_Ouvido objeto = new Fone_de_Ouvido(conectividade_do_fone, material, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
         dao.InsertFoneBD(objeto);
         return true;
 
@@ -138,11 +93,9 @@ public class Fone_de_Ouvido extends Produto {
         return true;
     }
     // Edita um aluno espec�fico pelo seu campo ID
-    public boolean UpdateFoneBD(String resposta_de_frequencia, String microfone, String sensibilidade,
-            String material, String cor, String duracao_da_bateria, int id, String nome, String tipo, float preco,
-            String descricao, String marca, String modelo, int qtd_estoque, Date data_cadastro) {
-        Fone_de_Ouvido objeto = new Fone_de_Ouvido(resposta_de_frequencia, microfone, sensibilidade, material, cor,
-        duracao_da_bateria, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
+    public boolean UpdateFoneBD(String conectividade_do_fone, String material, int id, String nome, String tipo, float preco, 
+        String descricao, String marca, String modelo, int qtd_estoque, String data_cadastro) {
+        Fone_de_Ouvido objeto = new Fone_de_Ouvido(conectividade_do_fone, material, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
 //        int indice = this.procuraIndice(id);
 //        AlunoDAO.MinhaLista.set(indice, objeto);
         dao.UpdateFoneBD(objeto);

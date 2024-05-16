@@ -31,7 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ferramentas_TP = new javax.swing.JMenu();
         cadastroprodutos_TP = new javax.swing.JMenu();
         cadastrarteclado_TP = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        CadastrarMouse = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         perifericos_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
@@ -60,8 +60,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         cadastroprodutos_TP.add(cadastrarteclado_TP);
 
-        jMenuItem2.setText("Novo Produto");
-        cadastroprodutos_TP.add(jMenuItem2);
+        CadastrarMouse.setText("Cadastrar Mouse");
+        CadastrarMouse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadastrarMouseActionPerformed(evt);
+            }
+        });
+        cadastroprodutos_TP.add(CadastrarMouse);
 
         jMenuItem3.setText("Novo Produto");
         cadastroprodutos_TP.add(jMenuItem3);
@@ -133,6 +138,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_perifericos_TPActionPerformed
 
+    private void CadastrarMouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarMouseActionPerformed
+     CadastroMouse objeto = new CadastroMouse();
+       objeto.setVisible(true);   
+    }//GEN-LAST:event_CadastrarMouseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -171,13 +181,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_fechar_TP;
+    private javax.swing.JMenuItem CadastrarMouse;
     private javax.swing.JMenuItem cadastrarteclado_TP;
     private javax.swing.JMenu cadastroprodutos_TP;
     private javax.swing.JMenu ferramentas_TP;
     private javax.swing.JMenuItem gerenciarTeclado_TP;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu perifericos_TP;

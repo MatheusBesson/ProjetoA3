@@ -40,13 +40,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Perif&#xe9;ricos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="perifericos_TPActionPerformed"/>
+          </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="teclados_TP">
+            <MenuItem class="javax.swing.JMenuItem" name="gerenciarTeclado_TP">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Teclados"/>
+                <Property name="text" type="java.lang.String" value=" Gerenciar Teclado"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="teclados_TPActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gerenciarTeclado_TPActionPerformed"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">

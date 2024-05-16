@@ -39,6 +39,8 @@ public class CadastroTeclado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jLabel1 = new javax.swing.JLabel();
         Label_nomeTeclado_CT = new javax.swing.JLabel();
         nome_CT = new javax.swing.JTextField();
         Label_marcaTeclado_CT = new javax.swing.JLabel();
@@ -68,9 +70,15 @@ public class CadastroTeclado extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
+        datacadastro_CT = new com.toedter.calendar.JDateChooser();
+        tipo_CT = new javax.swing.JComboBox<>();
         TECLADOIMAGE_CT = new javax.swing.JLabel();
         BACKGROUND_CT = new javax.swing.JLabel();
-        tipo_CT = new javax.swing.JComboBox<>();
+
+        jInternalFrame1.setVisible(true);
+
+        jLabel1.setText("jLabel1");
+        jInternalFrame1.getContentPane().add(jLabel1, java.awt.BorderLayout.LINE_START);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Teclado");
@@ -140,6 +148,12 @@ public class CadastroTeclado extends javax.swing.JFrame {
         Label_qtdestoqueTeclado_CT.setBounds(29, 282, 95, 16);
 
         qtdestoque_CT.setBackground(new java.awt.Color(204, 204, 204));
+        qtdestoque_CT.setDisabledTextColor(new java.awt.Color(204, 204, 204));
+        qtdestoque_CT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                qtdestoque_CTActionPerformed(evt);
+            }
+        });
         getContentPane().add(qtdestoque_CT);
         qtdestoque_CT.setBounds(141, 279, 120, 22);
 
@@ -233,13 +247,9 @@ public class CadastroTeclado extends javax.swing.JFrame {
         getContentPane().add(jPanel9);
         jPanel9.setBounds(400, 370, 100, 20);
 
-        TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
-        getContentPane().add(TECLADOIMAGE_CT);
-        TECLADOIMAGE_CT.setBounds(400, 130, 330, 140);
-
-        BACKGROUND_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FundoCadastroTeclados (1).jpg"))); // NOI18N
-        getContentPane().add(BACKGROUND_CT);
-        BACKGROUND_CT.setBounds(0, 0, 800, 520);
+        datacadastro_CT.setDateFormatString("dd/MM/yyyy");
+        getContentPane().add(datacadastro_CT);
+        datacadastro_CT.setBounds(170, 320, 100, 22);
 
         tipo_CT.setBackground(new java.awt.Color(102, 0, 51));
         tipo_CT.setForeground(new java.awt.Color(255, 255, 255));
@@ -250,7 +260,15 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipo_CT);
-        tipo_CT.setBounds(650, 70, 100, 22);
+        tipo_CT.setBounds(650, 70, 100, 24);
+
+        TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
+        getContentPane().add(TECLADOIMAGE_CT);
+        TECLADOIMAGE_CT.setBounds(400, 130, 330, 140);
+
+        BACKGROUND_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FundoCadastroTeclados (1).jpg"))); // NOI18N
+        getContentPane().add(BACKGROUND_CT);
+        BACKGROUND_CT.setBounds(0, 0, 800, 520);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -392,6 +410,8 @@ public class CadastroTeclado extends javax.swing.JFrame {
         catch (SQLException ex) {
             java.util.logging.Logger.getLogger(CadastroTeclado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
+       
         /*catch (SQLException ex) {
 Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
 }*/
@@ -408,8 +428,12 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     }//GEN-LAST:event_linguagem_CTActionPerformed
 
     private void tipo_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_CTActionPerformed
-        // TODO add your handling code here:
+     
     }//GEN-LAST:event_tipo_CTActionPerformed
+
+    private void qtdestoque_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdestoque_CTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qtdestoque_CTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -462,8 +486,11 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JButton b_cadastrar_CT;
     private javax.swing.JButton b_cancelar_CT;
     private javax.swing.JTextField conectividade_CT;
+    private com.toedter.calendar.JDateChooser datacadastro_CT;
     private javax.swing.JTextArea descricao_CT;
     private javax.swing.JTextField dimensao_CT;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -34,7 +34,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         perifericos_TP = new javax.swing.JMenu();
-        teclados_TP = new javax.swing.JMenuItem();
+        gerenciarTeclado_TP = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
 
@@ -71,14 +71,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(ferramentas_TP);
 
         perifericos_TP.setText("Periféricos");
-
-        teclados_TP.setText("Teclados");
-        teclados_TP.addActionListener(new java.awt.event.ActionListener() {
+        perifericos_TP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teclados_TPActionPerformed(evt);
+                perifericos_TPActionPerformed(evt);
             }
         });
-        perifericos_TP.add(teclados_TP);
+
+        gerenciarTeclado_TP.setText(" Gerenciar Teclado");
+        gerenciarTeclado_TP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarTeclado_TPActionPerformed(evt);
+            }
+        });
+        perifericos_TP.add(gerenciarTeclado_TP);
 
         jMenuItem1.setText("Produto");
         perifericos_TP.add(jMenuItem1);
@@ -115,13 +120,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_B_fechar_TPActionPerformed
 
     private void cadastrarteclado_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarteclado_TPActionPerformed
-       CadastroTeclado objeto = new CadastroTeclado();
-       objeto.setVisible(true);
+        CadastroTeclado objeto = new CadastroTeclado();
+        objeto.setVisible(true);
     }//GEN-LAST:event_cadastrarteclado_TPActionPerformed
 
-    private void teclados_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teclados_TPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_teclados_TPActionPerformed
+    private void gerenciarTeclado_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarTeclado_TPActionPerformed
+        GerenciaTeclado objeto = new GerenciaTeclado();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_gerenciarTeclado_TPActionPerformed
+
+    private void perifericos_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perifericos_TPActionPerformed
+
+    }//GEN-LAST:event_perifericos_TPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,12 +174,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastrarteclado_TP;
     private javax.swing.JMenu cadastroprodutos_TP;
     private javax.swing.JMenu ferramentas_TP;
+    private javax.swing.JMenuItem gerenciarTeclado_TP;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu perifericos_TP;
-    private javax.swing.JMenuItem teclados_TP;
     // End of variables declaration//GEN-END:variables
 }

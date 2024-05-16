@@ -96,6 +96,16 @@ public class Teclado extends Produto {
         return true;
 
     }
+    
+     // Edita um aluno espec�fico pelo seu campo ID
+    public boolean UpdateTecladoBD (String dimensao, String conectividade, int id, String nome, String tipo, float preco, String descricao, String marca, String modelo, int qtd_estoque, String data_cadastro) throws SQLException {
+        Teclado objeto = new Teclado (dimensao, conectividade, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
+//        int indice = this.procuraIndice(id);
+//        AlunoDAO.MinhaLista.set(indice, objeto);
+        dao.UpdateTecladoBD(objeto);
+        return true;
+    }
+
 
     // carrega dados de um Teclado espec�fico pelo seu ID
     public Teclado carregaTeclado(int id) {

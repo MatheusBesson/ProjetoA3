@@ -64,6 +64,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         Label_datacadastro_GT = new javax.swing.JLabel();
         Label_tipo_GT = new javax.swing.JLabel();
         tipo_GT = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(883, 591));
@@ -109,7 +110,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 60, 820, 120);
+        jScrollPane1.setBounds(30, 60, 820, 100);
 
         b_cancelar_GT.setText("Cancelar");
         b_cancelar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -138,48 +139,56 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         getContentPane().add(b_alterar_GT);
         b_alterar_GT.setBounds(550, 490, 80, 25);
 
+        Label_nome_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_nome_GT.setText("Nome do produto:");
         getContentPane().add(Label_nome_GT);
         Label_nome_GT.setBounds(120, 230, 110, 20);
         getContentPane().add(nome_GT);
         nome_GT.setBounds(230, 230, 199, 22);
 
+        Label_marca_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_marca_GT.setText("Marca: ");
         getContentPane().add(Label_marca_GT);
         Label_marca_GT.setBounds(140, 260, 50, 16);
         getContentPane().add(marca_GT);
         marca_GT.setBounds(190, 260, 160, 22);
 
+        Label_modelo_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_modelo_GT.setText("Modelo:");
         getContentPane().add(Label_modelo_GT);
         Label_modelo_GT.setBounds(130, 290, 60, 16);
         getContentPane().add(modelo_GT);
         modelo_GT.setBounds(190, 290, 160, 22);
 
+        Label_preco_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_preco_GT.setText("Preço:");
         getContentPane().add(Label_preco_GT);
         Label_preco_GT.setBounds(140, 320, 44, 16);
         getContentPane().add(preco_GT);
         preco_GT.setBounds(190, 320, 92, 22);
 
+        Label_qtdestoque_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_qtdestoque_GT.setText("Quant. Estoque:");
         getContentPane().add(Label_qtdestoque_GT);
         Label_qtdestoque_GT.setBounds(90, 350, 100, 16);
         getContentPane().add(qtdestoque_GT);
         qtdestoque_GT.setBounds(190, 350, 90, 22);
 
+        Label_dimensao_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_dimensao_GT.setText("Dimensão: ");
         getContentPane().add(Label_dimensao_GT);
         Label_dimensao_GT.setBounds(460, 230, 70, 16);
         getContentPane().add(dimensao_GT);
         dimensao_GT.setBounds(530, 230, 153, 22);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Conectividade:");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(440, 260, 90, 16);
         getContentPane().add(conectividade_GT);
         conectividade_GT.setBounds(530, 260, 153, 22);
 
+        Label_descricao_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_descricao_GT.setText("Descrição (opcional):");
         getContentPane().add(Label_descricao_GT);
         Label_descricao_GT.setBounds(410, 300, 120, 16);
@@ -195,10 +204,12 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         getContentPane().add(datacadastro_GT);
         datacadastro_GT.setBounds(190, 390, 100, 22);
 
+        Label_datacadastro_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_datacadastro_GT.setText("Data de cadastro:");
         getContentPane().add(Label_datacadastro_GT);
         Label_datacadastro_GT.setBounds(80, 390, 110, 16);
 
+        Label_tipo_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_tipo_GT.setText("Tipo:");
         getContentPane().add(Label_tipo_GT);
         Label_tipo_GT.setBounds(690, 190, 40, 16);
@@ -206,6 +217,10 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         tipo_GT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teclado" }));
         getContentPane().add(tipo_GT);
         tipo_GT.setBounds(730, 190, 100, 20);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACKGROUND GT CONVERTED.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 880, 600);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -485,6 +500,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JTextArea descricao_GT;
     private javax.swing.JTextField dimensao_GT;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableTeclado_GT;

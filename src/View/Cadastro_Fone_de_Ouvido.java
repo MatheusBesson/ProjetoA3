@@ -56,7 +56,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         b_cadastrar = new javax.swing.JButton();
         c_data = new com.toedter.calendar.JDateChooser();
         c_tipo = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -158,10 +157,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             }
         });
         getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 183, -1));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoCadastroTeclados.jpg"))); // NOI18N
-        jLabel9.setText("jLabel9");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, -5, 980, 490));
 
         pack();
         setLocationRelativeTo(null);
@@ -349,7 +344,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

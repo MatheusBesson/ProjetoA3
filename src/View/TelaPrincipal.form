@@ -30,10 +30,13 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarMouseActionPerformed"/>
                   </Events>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+                <MenuItem class="javax.swing.JMenuItem" name="cadastrar_fonedeouvido_TP">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Novo Produto"/>
+                    <Property name="text" type="java.lang.String" value="Cadastrar Fone de ouvido"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastrar_fonedeouvido_TPActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

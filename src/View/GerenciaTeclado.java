@@ -6,6 +6,7 @@ package View;
 
 import Model.Teclado;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -304,7 +305,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 this.modelo_GT.setText("");
                 this.preco_GT.setText("");
                 this.qtdestoque_GT.setText("");
-                //  this.datacadastro_CT.setDateFormatString("");
+                this.datacadastro_GT.setDate(null);
                 this.descricao_GT.setText("");
                 this.dimensao_GT.setText("");
                 this.conectividade_GT.setText("");
@@ -361,7 +362,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
                     this.modelo_GT.setText("");
                     this.preco_GT.setText("");
                     this.qtdestoque_GT.setText("");
-                    //  this.datacadastro_GT.setDate("");
+                    this.datacadastro_GT.setDate(null);
                     this.descricao_GT.setText("");
                     this.dimensao_GT.setText("");
                     this.conectividade_GT.setText("");
@@ -392,13 +393,11 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
             String modelo = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 4).toString();
             String preco = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 5).toString();
             String qtd_estoque = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 6).toString();
-            String data_cadastro = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 7).toString();
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            data_cadastro = sdf.format(this.datacadastro_GT.getDate());
-            
+            String data_cadastroString = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 7).toString();
             String descricao = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 8).toString();
             String dimensao = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 9).toString();
             String conectividade = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 10).toString();
+            Date data_cadastro = null;
            
             
             
@@ -408,10 +407,12 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
             this.modelo_GT.setText(modelo);
             this.preco_GT.setText(preco);
             this.qtdestoque_GT.setText(qtd_estoque);
-            try{
-                data_cadastro = new SimpleDateFormat ("dd/MM/yyyy").parse(marca)
+             try {
+                data_cadastro = new SimpleDateFormat("dd/MM/yyyy").parse(data_cadastroString);
+            } catch (ParseException ex) {
+                JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");               
             }
-           // this.datacadastro_GT.setDate(data_cadastro);
+           
             this.descricao_GT.setText(descricao);
             this.dimensao_GT.setText(dimensao);
             this.conectividade_GT.setText(conectividade);
@@ -422,7 +423,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     public void carregaTabela() {
 
         DefaultTableModel modelo = (DefaultTableModel) this.jTableTeclado_GT.getModel();
-        modelo.setNumRows(10);
+        modelo.setNumRows(0);
 
         ArrayList<Teclado> listaTeclado = new ArrayList<>();
         listaTeclado = objTeclado.getListaTeclado();
@@ -439,7 +440,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
                 a.getData_cadastro(),
                 a.getDescricao(),
                 a.getDimensao(),
-                a.getConectividade()
+                a.getConectividade(),
             });
         }
     }

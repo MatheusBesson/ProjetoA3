@@ -24,9 +24,8 @@ public class CadastroMouse extends javax.swing.JFrame {
     private Mouse objetoMouse;
     public CadastroMouse() {
     initComponents();
-    this.objetoMouse = new Mouse
-    
-            }
+    this.objetoMouse = new Mouse();
+        }
     
     
  
@@ -193,7 +192,7 @@ public class CadastroMouse extends javax.swing.JFrame {
             String descricao_mouse = "";
             int botoes_mouse = 0;
             int dpi_mouse = 0;
-            String tipo_mouse ;
+            String tipo_mouse= "" ;
 
             if (this.nome_CT.getText().length() < 2 && this.nome_CT.getText().length() > 45 ) {
                 throw new Mensagens("Nome deve conter entre DOIS a QUARENTA E CINCO caracteres!");

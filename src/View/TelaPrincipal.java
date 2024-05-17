@@ -33,7 +33,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastrarteclado_TP = new javax.swing.JMenuItem();
         CadastrarMouse = new javax.swing.JMenuItem();
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
-        perifericos_TP = new javax.swing.JMenu();
+        gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -80,10 +80,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(ferramentas_TP);
 
-        perifericos_TP.setText("Periféricos");
-        perifericos_TP.addActionListener(new java.awt.event.ActionListener() {
+        gerenciar_fone_de_ouvido_TP.setText("Periféricos");
+        gerenciar_fone_de_ouvido_TP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                perifericos_TPActionPerformed(evt);
+                gerenciar_fone_de_ouvido_TPActionPerformed(evt);
             }
         });
 
@@ -93,15 +93,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 gerenciarTeclado_TPActionPerformed(evt);
             }
         });
-        perifericos_TP.add(gerenciarTeclado_TP);
+        gerenciar_fone_de_ouvido_TP.add(gerenciarTeclado_TP);
 
-        jMenuItem1.setText("Produto");
-        perifericos_TP.add(jMenuItem1);
+        jMenuItem1.setText("Gerenciar Fone de Ouvido");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        gerenciar_fone_de_ouvido_TP.add(jMenuItem1);
 
         jMenuItem4.setText("Produto");
-        perifericos_TP.add(jMenuItem4);
+        gerenciar_fone_de_ouvido_TP.add(jMenuItem4);
 
-        jMenuBar1.add(perifericos_TP);
+        jMenuBar1.add(gerenciar_fone_de_ouvido_TP);
 
         setJMenuBar(jMenuBar1);
 
@@ -139,9 +144,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         objeto.setVisible(true);
     }//GEN-LAST:event_gerenciarTeclado_TPActionPerformed
 
-    private void perifericos_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perifericos_TPActionPerformed
+    private void gerenciar_fone_de_ouvido_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciar_fone_de_ouvido_TPActionPerformed
 
-    }//GEN-LAST:event_perifericos_TPActionPerformed
+    }//GEN-LAST:event_gerenciar_fone_de_ouvido_TPActionPerformed
 
     private void CadastrarMouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarMouseActionPerformed
      CadastroMouse objeto = new CadastroMouse();
@@ -152,6 +157,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Cadastro_Fone_de_Ouvido objeto = new Cadastro_Fone_de_Ouvido();
         objeto.setVisible(true);
     }//GEN-LAST:event_cadastrar_fonedeouvido_TPActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Gerenciar_Fone objeto = new Gerenciar_Fone();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,9 +207,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu cadastroprodutos_TP;
     private javax.swing.JMenu ferramentas_TP;
     private javax.swing.JMenuItem gerenciarTeclado_TP;
+    private javax.swing.JMenu gerenciar_fone_de_ouvido_TP;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenu perifericos_TP;
     // End of variables declaration//GEN-END:variables
 }

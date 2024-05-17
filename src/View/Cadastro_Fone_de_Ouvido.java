@@ -63,7 +63,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setTitle("Cadastro Fone de Ouvido");
-        setAlwaysOnTop(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nome:");

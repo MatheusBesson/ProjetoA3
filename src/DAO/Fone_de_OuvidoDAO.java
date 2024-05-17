@@ -45,10 +45,10 @@ public class Fone_de_OuvidoDAO {
 
             // Configurar a conex�o
             String server = "localhost"; //caminho do MySQL
-            String database = "db_epic";
+            String database = "produtos";
             String url = "jdbc:mysql://" + server + ":3306/" + database + "?useTimezone=true&serverTimezone=UTC";
             String user = "root";
-            String password = "Gremio1307";
+            String password = "vesku222skay";
 
             connection = DriverManager.getConnection(url, user, password);
 

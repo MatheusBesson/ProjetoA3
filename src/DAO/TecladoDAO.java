@@ -92,8 +92,8 @@ public class TecladoDAO {
                 float preco = res.getFloat("preco");
                 String marca = res.getString("marca");
                 String modelo = res.getString("modelo");
-                int qtd_estoque = res.getInt("quantidade estoque");
-                String data_cadastro = res.getString("data");
+                int qtd_estoque = res.getInt("qtd_estoque");
+                String data_cadastro = res.getString("data_cadastro");
                 String dimensao = res.getString("dimensao");
                 String conectividade = res.getString("conectividade");
                 String descricao = res.getString("descricao");

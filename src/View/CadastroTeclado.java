@@ -318,14 +318,14 @@ public class CadastroTeclado extends javax.swing.JFrame {
             String modelo_teclado = "";
             float preco_teclado = 0;
             int qtd_estoque_teclado = 0;
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String datacadastro_teclado = sdf.format(datacadastro_CT.getDate());
             String descricao_teclado = "";
             String dimensao_teclado = "";
             String conectividade_teclado = "";
             String tipo_teclado ;
 
-            if (this.nome_CT.getText().length() < 2 && this.nome_CT.getText().length() > 45 ) {
+            if (this.nome_CT.getText().length() < 2 || this.nome_CT.getText().length() > 45 ) {
                 throw new Mensagens("Nome deve conter entre DOIS a QUARENTA E CINCO caracteres!");
             } else {
                 nome_teclado = this.nome_CT.getText();
@@ -336,19 +336,19 @@ public class CadastroTeclado extends javax.swing.JFrame {
                 throw new Mensagens ("Tipo de produto inválido!");
             }
 
-            if (this.marca_CT.getText().length() < 2 && this.marca_CT.getText().length() > 45) {
+            if (this.marca_CT.getText().length() < 2 || this.marca_CT.getText().length() > 45) {
                 throw new Mensagens("A declaração de marca deve conter entre DOIS a QUARENTA E CINCO caracteres!");
             } else {
                 marca_teclado = this.marca_CT.getText();
             }
 
-            if (this.modelo_CT.getText().length() < 2 && this.modelo_CT.getText().length() > 45) {
+            if (this.modelo_CT.getText().length() < 2 || this.modelo_CT.getText().length() > 45) {
                 throw new Mensagens("A declaração de modelo deve conter entre DOIS a QUARENTA E CINCO caracteres!");
             } else {
                 modelo_teclado = this.modelo_CT.getText();
             }
 
-            if (this.preco_CT.getText().length() < 1 && this.preco_CT.getText().length() > 50000) {
+            if (this.preco_CT.getText().length() < 1 || this.preco_CT.getText().length() > 50000) {
                 throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
             } else {
                 preco_teclado = Float.parseFloat(this.preco_CT.getText());
@@ -372,12 +372,12 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
             descricao_teclado = this.descricao_CT.getText();
 
-            if (this.dimensao_CT.getText().length() < 0 && this.dimensao_CT.getText().length() > 50) {
+            if (this.dimensao_CT.getText().length() < 0 || this.dimensao_CT.getText().length() > 50) {
                 throw new Mensagens("O campo de dimensão deve conter de UM até 50 caracteres!");
             } else {
                 dimensao_teclado = this.dimensao_CT.getText();
             }
-            if (this.conectividade_CT.getText().length() < 0 && this.dimensao_CT.getText().length() > 100) {
+            if (this.conectividade_CT.getText().length() < 0 || this.dimensao_CT.getText().length() > 100) {
                 throw new Mensagens("O campo de conectividade deve conter de UM até 50 caracteres!");
             } else {
                 conectividade_teclado = this.conectividade_CT.getText();
@@ -391,7 +391,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
                 this.modelo_CT.setText("");
                 this.preco_CT.setText("");
                 this.qtdestoque_CT.setText("");
-              //  this.datacadastro_CT.setDateFormatString("");
+                this.datacadastro_CT.setDate(null);
                 this.descricao_CT.setText("");
                 this.dimensao_CT.setText("");
                 this.conectividade_CT.setText("");

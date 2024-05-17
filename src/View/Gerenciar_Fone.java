@@ -60,7 +60,6 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         c_conectividade = new javax.swing.JComboBox<>();
 
         setTitle("Gerenciamento Fone de Ouvido");
-        setAlwaysOnTop(true);
 
         jTableFone.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -408,7 +407,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             // validando dados da interface grafica.
             int id = 0;
             if (this.jTableFone.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Fonede Ouvido para APAGAR");
+                throw new Mensagens("Primeiro Selecione um Fone de Ouvido para APAGAR");
             } else {
                 id = Integer.parseInt(this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 0).toString());
             }

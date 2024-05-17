@@ -73,23 +73,15 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "ID", "Nome", "Tipo", "Marca", "Modelo", "Preço", "Quant. Estoque", "Data de cadastro", "Descrição", "Dimensão", "Conectividade"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -148,49 +140,49 @@ public class GerenciaTeclado extends javax.swing.JFrame {
 
         Label_nome_GT.setText("Nome do produto:");
         getContentPane().add(Label_nome_GT);
-        Label_nome_GT.setBounds(130, 230, 99, 16);
+        Label_nome_GT.setBounds(120, 230, 110, 20);
         getContentPane().add(nome_GT);
         nome_GT.setBounds(230, 230, 199, 22);
 
         Label_marca_GT.setText("Marca: ");
         getContentPane().add(Label_marca_GT);
-        Label_marca_GT.setBounds(150, 260, 39, 16);
+        Label_marca_GT.setBounds(140, 260, 50, 16);
         getContentPane().add(marca_GT);
         marca_GT.setBounds(190, 260, 160, 22);
 
         Label_modelo_GT.setText("Modelo:");
         getContentPane().add(Label_modelo_GT);
-        Label_modelo_GT.setBounds(140, 290, 44, 16);
+        Label_modelo_GT.setBounds(130, 290, 60, 16);
         getContentPane().add(modelo_GT);
         modelo_GT.setBounds(190, 290, 160, 22);
 
         Label_preco_GT.setText("Preço:");
         getContentPane().add(Label_preco_GT);
-        Label_preco_GT.setBounds(150, 320, 44, 16);
+        Label_preco_GT.setBounds(140, 320, 44, 16);
         getContentPane().add(preco_GT);
         preco_GT.setBounds(190, 320, 92, 22);
 
         Label_qtdestoque_GT.setText("Quant. Estoque:");
         getContentPane().add(Label_qtdestoque_GT);
-        Label_qtdestoque_GT.setBounds(100, 350, 84, 16);
+        Label_qtdestoque_GT.setBounds(90, 350, 100, 16);
         getContentPane().add(qtdestoque_GT);
         qtdestoque_GT.setBounds(190, 350, 90, 22);
 
         Label_dimensao_GT.setText("Dimensão: ");
         getContentPane().add(Label_dimensao_GT);
-        Label_dimensao_GT.setBounds(460, 230, 78, 16);
+        Label_dimensao_GT.setBounds(460, 230, 70, 16);
         getContentPane().add(dimensao_GT);
         dimensao_GT.setBounds(530, 230, 153, 22);
 
         jLabel1.setText("Conectividade:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 260, 79, 16);
+        jLabel1.setBounds(440, 260, 90, 16);
         getContentPane().add(conectividade_GT);
         conectividade_GT.setBounds(530, 260, 153, 22);
 
         Label_descricao_GT.setText("Descrição (opcional):");
         getContentPane().add(Label_descricao_GT);
-        Label_descricao_GT.setBounds(400, 300, 120, 16);
+        Label_descricao_GT.setBounds(410, 300, 120, 16);
 
         descricao_GT.setColumns(20);
         descricao_GT.setRows(5);
@@ -198,16 +190,18 @@ public class GerenciaTeclado extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(530, 300, 230, 90);
+
+        datacadastro_GT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_GT);
-        datacadastro_GT.setBounds(190, 390, 126, 22);
+        datacadastro_GT.setBounds(190, 390, 100, 22);
 
         Label_datacadastro_GT.setText("Data de cadastro:");
         getContentPane().add(Label_datacadastro_GT);
-        Label_datacadastro_GT.setBounds(90, 390, 110, 16);
+        Label_datacadastro_GT.setBounds(80, 390, 110, 16);
 
         Label_tipo_GT.setText("Tipo:");
         getContentPane().add(Label_tipo_GT);
-        Label_tipo_GT.setBounds(690, 190, 50, 16);
+        Label_tipo_GT.setBounds(690, 190, 40, 16);
 
         tipo_GT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teclado" }));
         getContentPane().add(tipo_GT);
@@ -227,7 +221,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             String modelo_teclado = "";
             float preco_teclado = 0;
             int qtd_estoque_teclado = 0;
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String datacadastro_teclado = sdf.format(datacadastro_GT.getDate());
             String descricao_teclado = "";
             String dimensao_teclado = "";
@@ -244,6 +238,15 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             } else {
                 throw new Mensagens("Tipo de produto inválido!");
             }
+            if (this.preco_GT.getText().length() < 1 || this.preco_GT.getText().length() > 50000) {
+                throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
+            } else {
+                preco_teclado = Float.parseFloat(this.preco_GT.getText());
+            }
+            if (this.descricao_GT.getText().length() > 250) {
+                throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
+            }
+            descricao_teclado = this.descricao_GT.getText();
 
             if (this.marca_GT.getText().length() < 2 || this.marca_GT.getText().length() > 45) {
                 throw new Mensagens("A declaração de marca deve conter entre DOIS a QUARENTA E CINCO caracteres!");
@@ -257,14 +260,8 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 modelo_teclado = this.modelo_GT.getText();
             }
 
-            if (this.preco_GT.getText().length() < 1 || this.preco_GT.getText().length() > 50000) {
-                throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
-            } else {
-                preco_teclado = Float.parseFloat(this.preco_GT.getText());
-            }
-
             if (this.qtdestoque_GT.getText().length() <= 0) {
-                throw new Mensagens("O estoque não pode ser ZERO!");
+                throw new Mensagens("O estoque deve ser MAIOR que ZERO!");
 
             } else {
                 qtd_estoque_teclado = Integer.parseInt(this.qtdestoque_GT.getText());
@@ -276,10 +273,6 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             } else {
                 datacadastro_teclado = sdf.format(this.datacadastro_GT.getDate());
             }
-            if (this.descricao_GT.getText().length() > 250) {
-                throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
-            }
-            descricao_teclado = this.descricao_GT.getText();
 
             if (this.dimensao_GT.getText().length() < 0 || this.dimensao_GT.getText().length() > 50) {
                 throw new Mensagens("O campo de dimensão deve conter de UM até 50 caracteres!");
@@ -297,7 +290,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 id = Integer.parseInt(this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 0).toString());
             }
 
-            if (this.objTeclado.UpdateTecladoBD (dimensao_teclado, conectividade_teclado, id, nome_teclado, tipo_teclado, preco_teclado, descricao_teclado, marca_teclado, modelo_teclado, qtd_estoque_teclado, datacadastro_teclado)) {
+            if (this.objTeclado.UpdateTecladoBD(dimensao_teclado, conectividade_teclado, id, nome_teclado, tipo_teclado, preco_teclado, descricao_teclado, marca_teclado, modelo_teclado, qtd_estoque_teclado, datacadastro_teclado)) {
                 JOptionPane.showMessageDialog(rootPane, "Teclado Alterado com Sucesso!");
 
                 this.nome_GT.setText("");
@@ -311,24 +304,25 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 this.conectividade_GT.setText("");
                 this.tipo_GT.setSelectedItem("Teclado");
             }
+            
             System.out.println(this.objTeclado.getListaTeclado().toString());
+            
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Preencha o campo usando números!");
-        }catch (NullPointerException erroNull) {
+        } catch (NullPointerException erroNull) {
             JOptionPane.showMessageDialog(null, "Preencha o campo data!");
         } catch (SQLException ex) {
             Logger.getLogger(GerenciaTeclado.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally{
+        } finally {
             // atualiza a tabela.
             carregaTabela();
         }
         /*catch (SQLException ex) {
         Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
-        }*/ 
-        /*catch (SQLException ex) {
+        }*/
+ /*catch (SQLException ex) {
 Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
 }*/
     }//GEN-LAST:event_b_alterar_GTActionPerformed
@@ -383,8 +377,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     }//GEN-LAST:event_b_deletar_GTActionPerformed
 
     private void jTableTeclado_GTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTeclado_GTMouseClicked
-     
-        
+
         if (this.jTableTeclado_GT.getSelectedRow() != -1) {
 
             String nome = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 1).toString();
@@ -398,21 +391,19 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
             String dimensao = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 9).toString();
             String conectividade = this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 10).toString();
             Date data_cadastro = null;
-           
-            
-            
+
             this.nome_GT.setText(nome);
             this.tipo_GT.setSelectedItem(tipo);
             this.marca_GT.setText(marca);
             this.modelo_GT.setText(modelo);
             this.preco_GT.setText(preco);
             this.qtdestoque_GT.setText(qtd_estoque);
-             try {
-                data_cadastro = new SimpleDateFormat("dd/MM/yyyy").parse(data_cadastroString);
+            try {
+                data_cadastro = new SimpleDateFormat("yyyy-MM-dd").parse(data_cadastroString);
             } catch (ParseException ex) {
-                JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");               
+                JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");
             }
-           
+            this.datacadastro_GT.setDate(data_cadastro);
             this.descricao_GT.setText(descricao);
             this.dimensao_GT.setText(dimensao);
             this.conectividade_GT.setText(conectividade);
@@ -440,8 +431,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
                 a.getData_cadastro(),
                 a.getDescricao(),
                 a.getDimensao(),
-                a.getConectividade(),
-            });
+                a.getConectividade(),});
         }
     }
 

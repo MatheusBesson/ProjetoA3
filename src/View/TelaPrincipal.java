@@ -27,6 +27,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         B_fechar_TP = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         ferramentas_TP = new javax.swing.JMenu();
         cadastroprodutos_TP = new javax.swing.JMenu();
@@ -40,6 +41,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EpicPeriféricos");
+        setMaximumSize(new java.awt.Dimension(898, 550));
+        setMinimumSize(new java.awt.Dimension(898, 550));
+        getContentPane().setLayout(null);
 
         B_fechar_TP.setText("FECHAR");
         B_fechar_TP.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +51,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 B_fechar_TPActionPerformed(evt);
             }
         });
+        getContentPane().add(B_fechar_TP);
+        B_fechar_TP.setBounds(340, 390, 213, 68);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (2).png"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-200, -130, 1330, 770);
 
         ferramentas_TP.setText("Ferramentas");
 
@@ -110,24 +120,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(278, 278, 278)
-                .addComponent(B_fechar_TP, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(300, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
-                .addComponent(B_fechar_TP, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
-        );
-
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_fechar_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_fechar_TPActionPerformed
@@ -208,6 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu ferramentas_TP;
     private javax.swing.JMenuItem gerenciarTeclado_TP;
     private javax.swing.JMenu gerenciar_fone_de_ouvido_TP;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;

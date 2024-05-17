@@ -80,7 +80,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         jLabel1.setText("jLabel1");
         jInternalFrame1.getContentPane().add(jLabel1, java.awt.BorderLayout.LINE_START);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastrar Teclado");
         setMinimumSize(new java.awt.Dimension(800, 550));
         setSize(new java.awt.Dimension(800, 550));
@@ -271,6 +270,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
         BACKGROUND_CT.setBounds(0, 0, 800, 520);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void NomeTeclado_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeTeclado_CTActionPerformed

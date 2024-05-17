@@ -66,10 +66,15 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         tipo_GT = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gerenciar Teclado");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(883, 591));
+        setMinimumSize(new java.awt.Dimension(883, 591));
         setPreferredSize(new java.awt.Dimension(883, 591));
         getContentPane().setLayout(null);
 
+        jTableTeclado_GT.setBackground(new java.awt.Color(204, 204, 204));
+        jTableTeclado_GT.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
         jTableTeclado_GT.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -88,6 +93,8 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableTeclado_GT.setGridColor(new java.awt.Color(102, 102, 102));
+        jTableTeclado_GT.setSelectionBackground(new java.awt.Color(204, 51, 0));
         jTableTeclado_GT.getTableHeader().setReorderingAllowed(false);
         jTableTeclado_GT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,7 +117,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 60, 820, 100);
+        jScrollPane1.setBounds(30, 60, 820, 110);
 
         b_cancelar_GT.setText("Cancelar");
         b_cancelar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -223,6 +230,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         jLabel2.setBounds(0, 0, 880, 600);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b_alterar_GTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_alterar_GTActionPerformed

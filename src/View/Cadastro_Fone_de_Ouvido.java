@@ -179,7 +179,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             String marca = "";
             String modelo = "";
             int qtd_estoque =  0; 
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String data_cadastro = sdf.format(c_data.getDate());
             String conectividade_do_fone = "";
             String material = "";

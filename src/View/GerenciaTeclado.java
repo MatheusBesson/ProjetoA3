@@ -60,7 +60,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         Label_descricao_GT = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         descricao_GT = new javax.swing.JTextArea();
-        datacadastro_GT = new com.toedter.calendar.JDateChooser();
+        datacadastro_GT = new org.netbeans.modules.form.InvalidComponent();
         Label_datacadastro_GT = new javax.swing.JLabel();
         Label_tipo_GT = new javax.swing.JLabel();
         tipo_GT = new javax.swing.JComboBox<>();
@@ -126,7 +126,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_cancelar_GT);
-        b_cancelar_GT.setBounds(200, 490, 90, 25);
+        b_cancelar_GT.setBounds(200, 490, 90, 23);
 
         b_deletar_GT.setText("Deletar");
         b_deletar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +135,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_deletar_GT);
-        b_deletar_GT.setBounds(380, 490, 80, 25);
+        b_deletar_GT.setBounds(380, 490, 80, 23);
 
         b_alterar_GT.setText("Alterar");
         b_alterar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +144,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_alterar_GT);
-        b_alterar_GT.setBounds(550, 490, 80, 25);
+        b_alterar_GT.setBounds(550, 490, 80, 23);
 
         Label_nome_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_nome_GT.setText("Nome do produto:");
@@ -207,9 +207,8 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         getContentPane().add(jScrollPane2);
         jScrollPane2.setBounds(530, 300, 230, 90);
 
-        datacadastro_GT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_GT);
-        datacadastro_GT.setBounds(190, 390, 100, 22);
+        datacadastro_GT.setBounds(190, 390, 37, 18);
 
         Label_datacadastro_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_datacadastro_GT.setText("Data de cadastro:");
@@ -504,7 +503,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JButton b_cancelar_GT;
     private javax.swing.JButton b_deletar_GT;
     private javax.swing.JTextField conectividade_GT;
-    private com.toedter.calendar.JDateChooser datacadastro_GT;
+    private org.netbeans.modules.form.InvalidComponent datacadastro_GT;
     private javax.swing.JTextArea descricao_GT;
     private javax.swing.JTextField dimensao_GT;
     private javax.swing.JLabel jLabel1;

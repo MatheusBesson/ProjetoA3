@@ -43,7 +43,7 @@ public int maiorID() throws SQLException{
                     String database = "produtos";
                     String url = "jdbc:mysql://"+ server + ":3306/"+ database + "?useTimezone=true&serverTimezone=UTC";
                     String user = "root";
-                    String password = "rootpass";
+                    String password = "vesku222skay";
             connection = DriverManager.getConnection(url,user,password);
            
             
@@ -72,7 +72,7 @@ public int maiorID() throws SQLException{
             java.sql.Statement stmt = this.getConexao().createStatement();
             ResultSet res = stmt.executeQuery("SELECT * FROM peodutos.tb_mouse");
             while (res.next()) {
-                 int id = res.getInt("id");
+                 int id = res.getInt("id_Mouse");
                 String nome = res.getString("nome");
                 String tipo = res.getString("tipo");
                 float preco = res.getFloat("preco");
@@ -102,7 +102,7 @@ public int maiorID() throws SQLException{
 
     // Cadastra novo Mouse
     public boolean InsertMouseBD(Mouse objeto) {
-        String sql = "INSERT INTO produtos.tb_Mouse(id_Mouse,nome, tipo, preco, marca, modelo, qtd_estoque, data_cadastro,botoes,dpi)VALUES(?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO produtos.tb_mouse(id_Mouse,nome, tipo, preco, marca, modelo, qtd_estoque, data_cadastro,botoes,dpi,descricao)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -114,10 +114,11 @@ public int maiorID() throws SQLException{
             stmt.setFloat(4, objeto.getPreco());                                   
             stmt.setString(5, objeto.getMarca());
             stmt.setString(6, objeto.getModelo());            
-            stmt.setString(7,objeto.getData_cadastro());          
-            stmt.setInt(8, objeto.getBotoes());
-            stmt.setInt(9, objeto.getDpi());           
-            stmt.setString(10, objeto.getDescricao());
+            stmt.setInt(7,objeto.getQtd_estoque());          
+            stmt.setString (8,objeto.getData_cadastro());
+            stmt.setInt(9, objeto.getBotoes());
+            stmt.setInt(10, objeto.getDpi());           
+            stmt.setString(11, objeto.getDescricao());
             stmt.execute();
             stmt.close();
 
@@ -182,7 +183,7 @@ public int maiorID() throws SQLException{
 
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_Mouse WHERE id_Mouse = " + id);
+            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_mouse WHERE id_Mouse = " + id);
             res.next();
 
            objeto.setNome (res.getString("nome"));

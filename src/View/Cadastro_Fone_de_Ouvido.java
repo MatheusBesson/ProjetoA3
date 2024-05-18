@@ -171,7 +171,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
 
     private void b_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cadastrarActionPerformed
         try {
-            //recebendo e validando dados da interface gráfica.
+            //recebendo e validando dados da interface gráfica.20
             String nome = "";
             String tipo = "";
             float preco = 0;

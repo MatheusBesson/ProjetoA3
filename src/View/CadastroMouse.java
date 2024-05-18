@@ -18,14 +18,14 @@ import java.util.Date;
 
 /**
  *
- * @author Usuario
+ * @author Pedro
  */
 public class CadastroMouse extends javax.swing.JFrame {
     private Mouse objetoMouse;
     public CadastroMouse() {
     initComponents();
     this.objetoMouse = new Mouse();
-        }
+    }
     
     
  
@@ -57,69 +57,61 @@ public class CadastroMouse extends javax.swing.JFrame {
         b_cancela_CT = new javax.swing.JButton();
         b_cadastro_CT = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        datacadastro_CT = new com.toedter.calendar.JCalendar();
+        tipo_CT = new javax.swing.JComboBox<>();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design sem nome (1) (1).png"))); // NOI18N
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nome_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nome_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(nome_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 190, -1));
 
         marca_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 marca_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(marca_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 190, -1));
 
         preco_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 preco_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(preco_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 190, -1));
 
         qntdeestoque_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 qntdeestoque_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(qntdeestoque_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 190, 20));
 
         descricao_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 descricao_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(descricao_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 230, 120));
 
         botoes_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botoes_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(botoes_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 190, -1));
 
         dpi_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dpi_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(dpi_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 270, 190, -1));
 
         modelo_CT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modelo_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(modelo_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 190, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(322, 72, -1, -1));
 
         b_cancela_CT.setText("Cancelar");
         b_cancela_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +119,6 @@ public class CadastroMouse extends javax.swing.JFrame {
                 b_cancela_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cancela_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, -1, -1));
 
         b_cadastro_CT.setText("Cadastrar");
         b_cadastro_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -135,11 +126,87 @@ public class CadastroMouse extends javax.swing.JFrame {
                 b_cadastro_CTActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cadastro_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, 80, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design sem nome (1) (1).png"))); // NOI18N
         jLabel3.setText("jLabel2");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 700, 400));
+
+        tipo_CT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(marca_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modelo_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(preco_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140)
+                .addComponent(datacadastro_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(qntdeestoque_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(botoes_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(descricao_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(b_cancela_CT)
+                .addGap(64, 64, 64)
+                .addComponent(b_cadastro_CT))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(352, 352, 352)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(420, 420, 420)
+                .addComponent(dpi_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tipo_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(nome_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(marca_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(modelo_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(preco_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(datacadastro_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(qntdeestoque_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botoes_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(descricao_CT, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(tipo_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(b_cancela_CT)
+                            .addComponent(b_cadastro_CT)))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addComponent(dpi_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(nome_CT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,7 +255,7 @@ public class CadastroMouse extends javax.swing.JFrame {
             float preco_mouse = 0;
             int qtd_estoque_mouse = 0;
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            //String datacadastro_mouse = sdf.format(datacadastro_CT.getDate());
+            String datacadastro_mouse = sdf.format(datacadastro_CT.getDate());
             String descricao_mouse = "";
             int botoes_mouse = 0;
             int dpi_mouse = 0;
@@ -199,11 +266,11 @@ public class CadastroMouse extends javax.swing.JFrame {
             } else {
                 nome_mouse = this.nome_CT.getText();
             }
-            //if(this.tipo_CT.getSelectedItem() == "Mouse"){
-             //   tipo_mouse = this.tipo_CT.getSelectedItem().toString();
-            //}else{
-                //throw new Mensagens ("Tipo de produto inválido!");
-            //}
+            if(this.tipo_CT.getSelectedItem() == "Mouse"){
+                tipo_mouse = this.tipo_CT.getSelectedItem().toString();
+           }else{
+                throw new Mensagens ("Tipo de produto inválido!");
+            }
 
             if (this.marca_CT.getText().length() < 2 && this.marca_CT.getText().length() > 45) {
                 throw new Mensagens("A declaração de marca deve conter entre DOIS a QUARENTA E CINCO caracteres!");
@@ -230,11 +297,11 @@ public class CadastroMouse extends javax.swing.JFrame {
                 qtd_estoque_mouse = Integer.parseInt(this.qntdeestoque_CT.getText());
             }
 
-            //if (this.datacadastro_CT.getDate() == null) {
-                //throw new Mensagens("A data precisa ser selecionada!");}  
-            //else {
-                //datacadastro_mouse = sdf.format(this.datacadastro_CT.getDate());
-            //}
+            if (this.datacadastro_CT.getDate() == null) {
+                throw new Mensagens("A data precisa ser selecionada!");}  
+            else {
+                datacadastro_mouse = sdf.format(this.datacadastro_CT.getDate());
+            }
             if (this.descricao_CT.getText().length() > 250) {
                 throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
             }
@@ -265,7 +332,7 @@ public class CadastroMouse extends javax.swing.JFrame {
                 this.descricao_CT.setText("");
                 this.botoes_CT.setText("");
                 this.dpi_CT.setText("");
-                //this.tipo_CT.setSelectedItem("Mouse");
+                this.tipo_CT.setSelectedItem("Mouse");
             }
             System.out.println(this.objetoMouse.getListaMouse().toString());
 
@@ -323,6 +390,7 @@ public class CadastroMouse extends javax.swing.JFrame {
     private javax.swing.JButton b_cadastro_CT;
     private javax.swing.JButton b_cancela_CT;
     private javax.swing.JTextField botoes_CT;
+    private com.toedter.calendar.JCalendar datacadastro_CT;
     private javax.swing.JTextField descricao_CT;
     private javax.swing.JTextField dpi_CT;
     private javax.swing.JLabel jLabel1;
@@ -333,5 +401,6 @@ public class CadastroMouse extends javax.swing.JFrame {
     private javax.swing.JTextField nome_CT;
     private javax.swing.JTextField preco_CT;
     private javax.swing.JTextField qntdeestoque_CT;
+    private javax.swing.JComboBox<String> tipo_CT;
     // End of variables declaration//GEN-END:variables
 }

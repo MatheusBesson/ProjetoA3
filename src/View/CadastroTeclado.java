@@ -248,7 +248,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
 
         datacadastro_CT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_CT);
-        datacadastro_CT.setBounds(170, 320, 100, 22);
+        datacadastro_CT.setBounds(170, 320, 103, 22);
 
         tipo_CT.setBackground(new java.awt.Color(102, 0, 51));
         tipo_CT.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,7 +259,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipo_CT);
-        tipo_CT.setBounds(650, 70, 100, 24);
+        tipo_CT.setBounds(650, 70, 100, 22);
 
         TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
         getContentPane().add(TECLADOIMAGE_CT);

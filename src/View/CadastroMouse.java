@@ -57,7 +57,6 @@ public class CadastroMouse extends javax.swing.JFrame {
         b_cancela_CT = new javax.swing.JButton();
         b_cadastro_CT = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        datacadastro_CT = new com.toedter.calendar.JCalendar();
         tipo_CT = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -69,7 +68,8 @@ public class CadastroMouse extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        datacadastro_CT = new com.toedter.calendar.JDateChooser();
+        jLabel15 = new javax.swing.JLabel();
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design sem nome (1) (1).png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -157,7 +157,6 @@ public class CadastroMouse extends javax.swing.JFrame {
         jLabel3.setMinimumSize(new java.awt.Dimension(800, 550));
         jLabel3.setPreferredSize(new java.awt.Dimension(800, 550));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
-        getContentPane().add(datacadastro_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 62, -1, -1));
 
         tipo_CT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mouse" }));
         tipo_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +188,7 @@ public class CadastroMouse extends javax.swing.JFrame {
 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Data de Cadastro:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(561, 22, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Descrição(Opcional):");
@@ -203,9 +202,10 @@ public class CadastroMouse extends javax.swing.JFrame {
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Dpi Máximo:");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 291, -1, -1));
+        getContentPane().add(datacadastro_CT, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 190, 20));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Design sem nome (1) (1) (1).png"))); // NOI18N
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-34, -19, 920, 570));
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Design sem nome (1) (1) (1).png"))); // NOI18N
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -20, 900, 570));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -280,7 +280,7 @@ public class CadastroMouse extends javax.swing.JFrame {
             if (this.modelo_CT.getText().length() < 2 && this.modelo_CT.getText().length() > 45) {
                 throw new Mensagens("A declaração de modelo deve conter entre DOIS a QUARENTA E CINCO caracteres!");
             } else {
-                modelo_mouse = this.modelo_CT.getText();
+                modelo_mouse = this.modelo_CT.getText(); 
             }
 //
             if (this.preco_CT.getText().length() < 1 && this.preco_CT.getText().length() > 50000) {
@@ -305,18 +305,19 @@ public class CadastroMouse extends javax.swing.JFrame {
                 throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
             }
             descricao_mouse = this.descricao_CT.getText();
-//arrumar
-            if (this.botoes_CT.getText().length() < 2) {
-                throw new Mensagens("Mouse deve conter pelo menos DOiS botões!");
-            } else {
-                botoes_mouse = Integer.parseInt(this.botoes_CT.getText());
-            }
+
+             int botaoqnt = Integer.parseInt(this.botoes_CT.getText());
+    if (botaoqnt < 2 && botaoqnt >8 ) {
+        throw new Mensagens("A quantidade de botões deve ser entre DOIS a OITO");
+    } else {
+        botoes_mouse = botaoqnt;
+    }
             //
-            if (this.dpi_CT.getText().length() < 4 && this.dpi_CT.getText().length() > 5) {
-                throw new Mensagens("O campo de dpi deve conter de Quatro até Cinco caracteres!");
-            } else {
-                dpi_mouse =Integer.parseInt(this.dpi_CT.getText());
-            }                                                                       // 
+             if (this.dpi_CT.getText().length() <4  && this.dpi_CT.getText().length() > 5) { 
+        throw new Mensagens("O campo de dpi deve conter um valor entre 4 a 5 digitos!");
+    } else {
+        dpi_mouse = Integer.parseInt(this.dpi_CT.getText());
+    }                                                      // 
             //
             //dpi,botoes, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro;
 
@@ -393,7 +394,7 @@ public class CadastroMouse extends javax.swing.JFrame {
     private javax.swing.JButton b_cadastro_CT;
     private javax.swing.JButton b_cancela_CT;
     private javax.swing.JTextField botoes_CT;
-    private com.toedter.calendar.JCalendar datacadastro_CT;
+    private com.toedter.calendar.JDateChooser datacadastro_CT;
     private javax.swing.JTextField descricao_CT;
     private javax.swing.JTextField dpi_CT;
     private javax.swing.JLabel jLabel1;
@@ -401,7 +402,7 @@ public class CadastroMouse extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

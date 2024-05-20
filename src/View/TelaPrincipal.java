@@ -36,12 +36,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
         gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EpicPeriféricos");
-        setMaximumSize(new java.awt.Dimension(898, 550));
         setMinimumSize(new java.awt.Dimension(898, 550));
         getContentPane().setLayout(null);
 
@@ -105,6 +104,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         gerenciar_fone_de_ouvido_TP.add(gerenciarTeclado_TP);
 
+        jMenuItem4.setText("Gerenciar Mouse");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        gerenciar_fone_de_ouvido_TP.add(jMenuItem4);
+
         jMenuItem1.setText("Gerenciar Fone de Ouvido");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +119,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         gerenciar_fone_de_ouvido_TP.add(jMenuItem1);
-
-        jMenuItem4.setText("Produto");
-        gerenciar_fone_de_ouvido_TP.add(jMenuItem4);
 
         jMenuBar1.add(gerenciar_fone_de_ouvido_TP);
 
@@ -156,6 +160,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Gerenciar_Fone objeto = new Gerenciar_Fone();
         objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+      GerenciaMouse objeto = new GerenciaMouse();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments

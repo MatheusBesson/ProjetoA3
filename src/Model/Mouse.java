@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
-import Model.Produto;
+
 import DAO.MouseDAO;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -95,6 +95,11 @@ int id = this.maiorID() + 1;
     public boolean DeleteMouseBD(int id) {
     // int indice = this.procuraIndice(id);
         dao.DeleteMouseBD(id);
+        return true;
+    }
+    public boolean UpdateMouseBD (int botoes, int dpi, int id, String nome, String tipo, float preco, String descricao, String marca, String modelo, int qtd_estoque, String data_cadastro) throws SQLException {
+        Mouse objeto = new Mouse (botoes, dpi, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
+        dao.UpdateMouseBD(objeto);
         return true;
     }
 

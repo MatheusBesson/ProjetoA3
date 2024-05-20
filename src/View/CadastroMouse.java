@@ -75,7 +75,6 @@ public class CadastroMouse extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setMinimumSize(new java.awt.Dimension(800, 550));
-        setPreferredSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nome_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -153,9 +152,6 @@ public class CadastroMouse extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Design sem nome (1) (1).png"))); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel3.setMaximumSize(new java.awt.Dimension(800, 550));
-        jLabel3.setMinimumSize(new java.awt.Dimension(800, 550));
-        jLabel3.setPreferredSize(new java.awt.Dimension(800, 550));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, 0));
 
         tipo_CT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mouse" }));
@@ -314,7 +310,7 @@ public class CadastroMouse extends javax.swing.JFrame {
     }
             //
              if (this.dpi_CT.getText().length() <4  && this.dpi_CT.getText().length() > 5) { 
-        throw new Mensagens("O campo de dpi deve conter um valor entre 4 a 5 digitos!");
+        throw new Mensagens("O campo de dpi deve conter entre 4 a 5 caracteres!");
     } else {
         dpi_mouse = Integer.parseInt(this.dpi_CT.getText());
     }                                                      // 

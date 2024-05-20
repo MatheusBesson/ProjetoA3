@@ -23,6 +23,7 @@ public int maiorID() throws SQLException{
     try{
         java.sql.Statement stmt = this.getConexao().createStatement();
         //troca
+        ///////;
         ResultSet res = stmt.executeQuery("SELECT MAX (id_Mouse) id_Mouse FROM produtos.tb_mouse"); 
         res.next();
         maiorID= res.getInt("id_Mouse");
@@ -70,7 +71,7 @@ public int maiorID() throws SQLException{
 
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM peodutos.tb_mouse");
+            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_mouse");
             while (res.next()) {
                  int id = res.getInt("id_Mouse");
                 String nome = res.getString("nome");
@@ -78,10 +79,11 @@ public int maiorID() throws SQLException{
                 float preco = res.getFloat("preco");
                 String marca = res.getString("marca");
                 String modelo = res.getString("modelo");
-                int qtd_estoque = res.getInt("quantidade estoque");
-                String data_cadastro = res.getString("data"); 
+                int qtd_estoque = res.getInt("qtd_estoque");
+                String data_cadastro = res.getString("data_cadastro"); 
                 int botoes = res.getInt("botoes");                
-                int dpi = res.getInt("dpi");               
+                int dpi = res.getInt("dpi");
+                
                 
                 String descricao = res.getString("descrição");
                
@@ -134,7 +136,7 @@ public int maiorID() throws SQLException{
     public boolean DeleteMouseBD(int id) {
         try {
             java.sql.Statement stmt = this.getConexao().createStatement();
-            stmt.executeUpdate("DELETE FROM produtos.tb_mouse WHERE id_Mouse " + id);
+            stmt.executeUpdate("DELETE FROM produtos.tb_mouse WHERE id_Mouse = " + id);
             stmt.close();
 
         } catch (SQLException erro) {
@@ -186,15 +188,15 @@ public int maiorID() throws SQLException{
             ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_mouse WHERE id_Mouse = " + id);
             res.next();
 
-           objeto.setNome (res.getString("nome"));
-           objeto.setTipo (res.getString("tipo"));
+           objeto.setNome(res.getString("nome"));
+           objeto.setTipo(res.getString("tipo"));
            objeto.setPreco(res.getFloat("preco"));
-           objeto.setMarca (res.getString("marca"));
-           objeto.setModelo (res.getString("modelo"));
-           objeto.setQtd_estoque (res.getInt("quantidade estoque"));
-           objeto.setData_cadastro (res.getString("data")); 
-           objeto.setBotoes (res.getInt("botoes"));                
-           objeto.setDpi ( res.getInt("dpi"));
+           objeto.setMarca(res.getString("marca"));
+           objeto.setModelo(res.getString("modelo"));
+           objeto.setQtd_estoque(res.getInt("quantidade estoque"));
+           objeto.setData_cadastro(res.getString("data")); 
+           objeto.setBotoes(res.getInt("botões"));                
+           objeto.setDpi(res.getInt("dpi"));
            
                 
            objeto.setDescricao(res.getString("descrição"));

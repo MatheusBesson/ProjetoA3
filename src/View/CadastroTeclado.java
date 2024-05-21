@@ -248,7 +248,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
 
         datacadastro_CT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_CT);
-        datacadastro_CT.setBounds(170, 320, 103, 22);
+        datacadastro_CT.setBounds(170, 320, 100, 22);
 
         tipo_CT.setBackground(new java.awt.Color(102, 0, 51));
         tipo_CT.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,7 +259,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipo_CT);
-        tipo_CT.setBounds(650, 70, 100, 22);
+        tipo_CT.setBounds(650, 70, 100, 24);
 
         TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
         getContentPane().add(TECLADOIMAGE_CT);
@@ -323,17 +323,17 @@ public class CadastroTeclado extends javax.swing.JFrame {
             String descricao_teclado = "";
             String dimensao_teclado = "";
             String conectividade_teclado = "";
-            String tipo_teclado ;
+            String tipo_teclado;
 
-            if (this.nome_CT.getText().length() < 2 || this.nome_CT.getText().length() > 45 ) {
+            if (this.nome_CT.getText().length() < 2 || this.nome_CT.getText().length() > 45) {
                 throw new Mensagens("Nome deve conter entre DOIS a QUARENTA E CINCO caracteres!");
             } else {
                 nome_teclado = this.nome_CT.getText();
             }
-            if(this.tipo_CT.getSelectedItem() == "Teclado"){
+            if (this.tipo_CT.getSelectedItem() == "Teclado") {
                 tipo_teclado = this.tipo_CT.getSelectedItem().toString();
-            }else{
-                throw new Mensagens ("Tipo de produto inválido!");
+            } else {
+                throw new Mensagens("Tipo de produto inválido!");
             }
 
             if (this.marca_CT.getText().length() < 2 || this.marca_CT.getText().length() > 45) {
@@ -348,12 +348,37 @@ public class CadastroTeclado extends javax.swing.JFrame {
                 modelo_teclado = this.modelo_CT.getText();
             }
 
-            if (this.preco_CT.getText().length() < 1 || this.preco_CT.getText().length() > 50000) {
+          /*  try {
+                float preco_CT = Float.parseFloat(this.preco_CT.getText());
+
+                if (preco_CT < 0 || preco_CT > 50000) {
+                    throw new Mensagens("O preço não pode ser menor que ZERO ou maior que CINQUENTA MIL!");
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("O valor inserido não é um número válido!");
+            }    */
+            
+            
+            try {
+                float preco2 = Float.parseFloat(this.preco_CT.getText());
+
+                if (preco2 < 0 || preco2 > 50000) {
+                    throw new Mensagens("O preço não pode ser menor que ZERO ou maior que CINQUENTA MIL!");
+                } else {
+                   preco_teclado = Float.parseFloat(this.preco_CT.getText());
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("O valor inserido não é um número válido!");
+            }
+            
+            
+
+            /*    if (this.preco_CT.getText().length() > 1 && this.preco_CT.getText().length() < 50000) {
                 throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
             } else {
                 preco_teclado = Float.parseFloat(this.preco_CT.getText());
-            }
-
+            } */
+                
             if (this.qtdestoque_CT.getText().length() <= 0) {
                 throw new Mensagens("O estoque não pode ser ZERO!");
 
@@ -383,7 +408,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
                 conectividade_teclado = this.conectividade_CT.getText();
             }                                                                       // dimensao, conectividade, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro;
 
-            if (this.objTeclado.InsertTecladoBD(dimensao_teclado, conectividade_teclado, nome_teclado, tipo_teclado, preco_teclado, descricao_teclado, marca_teclado, modelo_teclado, qtd_estoque_teclado, datacadastro_teclado )) {
+            if (this.objTeclado.InsertTecladoBD(dimensao_teclado, conectividade_teclado, nome_teclado, tipo_teclado, preco_teclado, descricao_teclado, marca_teclado, modelo_teclado, qtd_estoque_teclado, datacadastro_teclado)) {
                 JOptionPane.showMessageDialog(rootPane, "Teclado Cadastrado com Sucesso!");
 
                 this.nome_CT.setText("");
@@ -403,19 +428,15 @@ public class CadastroTeclado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Preencha o campo usando números!");
-        } 
-        catch (NullPointerException erroNull){
-            JOptionPane.showMessageDialog(null, "Preencha o campo data!");
-        }
-        catch (SQLException ex) {
+        } catch (NullPointerException erroNull) {
+            JOptionPane.showMessageDialog(null, "Campo(s) não preenchido(s)!");
+        } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(CadastroTeclado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
-       
+
         /*catch (SQLException ex) {
 Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
 }*/
-
 
     }//GEN-LAST:event_b_cadastrar_CTActionPerformed
 
@@ -427,13 +448,13 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
         // TODO add your handling code here:
     }//GEN-LAST:event_linguagem_CTActionPerformed
 
-    private void tipo_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_CTActionPerformed
-     
-    }//GEN-LAST:event_tipo_CTActionPerformed
-
     private void qtdestoque_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtdestoque_CTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_qtdestoque_CTActionPerformed
+
+    private void tipo_CTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipo_CTActionPerformed
+
+    }//GEN-LAST:event_tipo_CTActionPerformed
 
     /**
      * @param args the command line arguments

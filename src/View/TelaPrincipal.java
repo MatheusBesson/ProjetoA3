@@ -32,11 +32,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ferramentas_TP = new javax.swing.JMenu();
         cadastroprodutos_TP = new javax.swing.JMenu();
         cadastrarteclado_TP = new javax.swing.JMenuItem();
-        CadastrarMouse = new javax.swing.JMenuItem();
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
         gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,14 +67,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         cadastroprodutos_TP.add(cadastrarteclado_TP);
 
-        CadastrarMouse.setText("Cadastrar Mouse");
-        CadastrarMouse.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarMouseActionPerformed(evt);
-            }
-        });
-        cadastroprodutos_TP.add(CadastrarMouse);
-
         cadastrar_fonedeouvido_TP.setText("Cadastrar Fone de ouvido");
         cadastrar_fonedeouvido_TP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,14 +93,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         gerenciar_fone_de_ouvido_TP.add(gerenciarTeclado_TP);
-
-        jMenuItem4.setText("Gerenciar Mouse");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        gerenciar_fone_de_ouvido_TP.add(jMenuItem4);
 
         jMenuItem1.setText("Gerenciar Fone de Ouvido");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -146,11 +128,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_gerenciar_fone_de_ouvido_TPActionPerformed
 
-    private void CadastrarMouseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarMouseActionPerformed
-     CadastroMouse objeto = new CadastroMouse();
-       objeto.setVisible(true);   
-    }//GEN-LAST:event_CadastrarMouseActionPerformed
-
     private void cadastrar_fonedeouvido_TPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrar_fonedeouvido_TPActionPerformed
         Cadastro_Fone_de_Ouvido objeto = new Cadastro_Fone_de_Ouvido();
         objeto.setVisible(true);
@@ -160,11 +137,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Gerenciar_Fone objeto = new Gerenciar_Fone();
         objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-      GerenciaMouse objeto = new GerenciaMouse();
-        objeto.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,7 +176,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_fechar_TP;
-    private javax.swing.JMenuItem CadastrarMouse;
     private javax.swing.JMenuItem cadastrar_fonedeouvido_TP;
     private javax.swing.JMenuItem cadastrarteclado_TP;
     private javax.swing.JMenu cadastroprodutos_TP;
@@ -214,6 +185,5 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }

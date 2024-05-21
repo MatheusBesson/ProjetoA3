@@ -62,13 +62,15 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         descricao_GT = new javax.swing.JTextArea();
         datacadastro_GT = new com.toedter.calendar.JDateChooser();
         Label_datacadastro_GT = new javax.swing.JLabel();
-        Label_tipo_GT = new javax.swing.JLabel();
-        tipo_GT = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        tipo_GT = new javax.swing.JComboBox<>();
+        Label_tipo_GT = new javax.swing.JLabel();
 
         setTitle("Gerenciar Teclado");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(883, 591));
         setMinimumSize(new java.awt.Dimension(883, 591));
+        setPreferredSize(new java.awt.Dimension(883, 591));
         getContentPane().setLayout(null);
 
         jTableTeclado_GT.setBackground(new java.awt.Color(204, 204, 204));
@@ -124,7 +126,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_cancelar_GT);
-        b_cancelar_GT.setBounds(200, 490, 90, 23);
+        b_cancelar_GT.setBounds(200, 490, 90, 25);
 
         b_deletar_GT.setText("Deletar");
         b_deletar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -133,7 +135,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_deletar_GT);
-        b_deletar_GT.setBounds(380, 490, 80, 23);
+        b_deletar_GT.setBounds(380, 490, 80, 25);
 
         b_alterar_GT.setText("Alterar");
         b_alterar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +144,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_alterar_GT);
-        b_alterar_GT.setBounds(550, 490, 80, 23);
+        b_alterar_GT.setBounds(550, 490, 80, 25);
 
         Label_nome_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_nome_GT.setText("Nome do produto:");
@@ -207,25 +209,25 @@ public class GerenciaTeclado extends javax.swing.JFrame {
 
         datacadastro_GT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_GT);
-        datacadastro_GT.setBounds(190, 390, 103, 22);
+        datacadastro_GT.setBounds(190, 390, 100, 22);
 
         Label_datacadastro_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_datacadastro_GT.setText("Data de cadastro:");
         getContentPane().add(Label_datacadastro_GT);
         Label_datacadastro_GT.setBounds(80, 390, 110, 16);
 
-        Label_tipo_GT.setForeground(new java.awt.Color(255, 255, 255));
-        Label_tipo_GT.setText("Tipo:");
-        getContentPane().add(Label_tipo_GT);
-        Label_tipo_GT.setBounds(690, 190, 40, 16);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACKGROUND GT CONVERTED.jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 0, 880, 590);
 
         tipo_GT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teclado" }));
         getContentPane().add(tipo_GT);
         tipo_GT.setBounds(730, 190, 100, 20);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACKGROUND GT CONVERTED.jpg"))); // NOI18N
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 880, 590);
+        Label_tipo_GT.setForeground(new java.awt.Color(255, 255, 255));
+        Label_tipo_GT.setText("Tipo:");
+        getContentPane().add(Label_tipo_GT);
+        Label_tipo_GT.setBounds(690, 190, 40, 16);
 
         pack();
         setLocationRelativeTo(null);
@@ -259,6 +261,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             } else {
                 throw new Mensagens("Tipo de produto inválido!");
             }
+
             if (this.preco_GT.getText().length() < 1 || this.preco_GT.getText().length() > 50000) {
                 throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
             } else {
@@ -302,11 +305,11 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
             if (this.conectividade_GT.getText().length() < 0 || this.dimensao_GT.getText().length() > 100) {
                 throw new Mensagens("O campo de conectividade deve conter de UM até 50 caracteres!");
-            } else{
+            } else {
                 conectividade_teclado = this.conectividade_GT.getText();
             }
             if (this.jTableTeclado_GT.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Item para Alterar");
+                throw new Mensagens("Primeiro Selecione um Aluno para Alterar");
             } else {
                 id = Integer.parseInt(this.jTableTeclado_GT.getValueAt(this.jTableTeclado_GT.getSelectedRow(), 0).toString());
             }

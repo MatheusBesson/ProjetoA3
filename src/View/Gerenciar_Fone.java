@@ -45,8 +45,6 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         c_nome = new javax.swing.JTextField();
-        c_tipo = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
         c_material = new javax.swing.JTextField();
         c_preco = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -58,9 +56,16 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         b_apagar = new javax.swing.JButton();
         c_data = new com.toedter.calendar.JDateChooser();
         c_conectividade = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        c_tipo = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
 
         setTitle("Gerenciamento Fone de Ouvido");
+        setMaximumSize(new java.awt.Dimension(1087, 593));
+        setMinimumSize(new java.awt.Dimension(1087, 593));
+        setPreferredSize(new java.awt.Dimension(1087, 593));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableFone.setBackground(new java.awt.Color(204, 204, 204));
@@ -94,54 +99,47 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableFone);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 1110, 140));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 1030, 160));
 
         jLabel6.setForeground(new java.awt.Color(255, 102, 0));
         jLabel6.setText("Modelo:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 52, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 52, -1));
 
         jLabel7.setForeground(new java.awt.Color(255, 102, 0));
         jLabel7.setText("Quantidade em Estoque:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, -1, -1));
 
         jLabel8.setForeground(new java.awt.Color(255, 102, 0));
         jLabel8.setText("Data de Cadastro:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
-        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 153, -1));
-        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 341, -1));
-        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 143, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 440, 110, -1));
+        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 153, -1));
+        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 240, -1));
+        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, 90, -1));
 
         jLabel11.setForeground(new java.awt.Color(255, 102, 0));
         jLabel11.setText("conectividade do fone:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 130, -1));
 
         jLabel12.setForeground(new java.awt.Color(255, 102, 0));
         jLabel12.setText("Material:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 55, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 55, -1));
 
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
+        jLabel1.setText("Nome do produto:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 110, -1));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 298, -1));
-
-        c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
-        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 210, -1));
-
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel2.setText("Tipo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 37, -1));
-        getContentPane().add(c_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 188, -1));
-        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 76, -1));
+        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 250, -1));
+        getContentPane().add(c_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, 188, -1));
+        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 90, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
         jLabel3.setText("Preço:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 37, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 50, -1));
 
         b_cancelar.setText("Cancelar");
         b_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -149,11 +147,11 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 b_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 522, 92, 33));
+        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 92, 33));
 
         jLabel4.setForeground(new java.awt.Color(255, 102, 0));
         jLabel4.setText("Descrição:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 390, 64, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, 64, -1));
 
         b_alterar.setText("Alterar");
         b_alterar.addActionListener(new java.awt.event.ActionListener() {
@@ -161,31 +159,47 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 b_alterarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 522, 102, 33));
-        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 341, 73));
+        getContentPane().add(b_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 500, 102, 33));
+
+        c_descricao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_descricaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 350, 260, 80));
 
         jLabel5.setForeground(new java.awt.Color(255, 102, 0));
         jLabel5.setText("Marca:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 46, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 50, -1));
 
-        b_apagar.setText("Apagar");
+        b_apagar.setText("Deletar");
         b_apagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b_apagarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_apagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(919, 522, 85, 33));
+        getContentPane().add(b_apagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 85, 33));
 
         c_data.setDateFormatString("dd '/' MM '/' y");
-        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 119, -1));
+        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 119, -1));
 
         c_conectividade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Com fio", "Sem fio" }));
-        getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, -1, -1));
+        getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 100, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Design sem nome.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
+        jLabel10.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel10.setText("Gerenciar Fone @");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 540, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1190, 630));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -1580, 2940, 2190));
+
+        c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
+        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 190, 120, -1));
+
+        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel2.setText("Tipo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 37, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -400,6 +414,10 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             carregaTabela();
         }
     }//GEN-LAST:event_b_apagarActionPerformed
+
+    private void c_descricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_descricaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_descricaoActionPerformed
     public void carregaTabela() {
      DefaultTableModel modelo = (DefaultTableModel) this.jTableFone.getModel();
      modelo.setNumRows(0);
@@ -475,6 +493,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
     private javax.swing.JTextField c_qtd_estoque;
     private javax.swing.JComboBox<String> c_tipo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

@@ -40,6 +40,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EpicPeriféricos");
         setMinimumSize(new java.awt.Dimension(898, 550));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         B_fechar_TP.setText("FECHAR");
@@ -134,8 +135,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastrar_fonedeouvido_TPActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Gerenciar_Fone objeto = new Gerenciar_Fone();
-        objeto.setVisible(true);
+       Gerenciar_Fone objeto = new Gerenciar_Fone();
+       objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

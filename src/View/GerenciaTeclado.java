@@ -62,15 +62,17 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         descricao_GT = new javax.swing.JTextArea();
         datacadastro_GT = new com.toedter.calendar.JDateChooser();
         Label_datacadastro_GT = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         tipo_GT = new javax.swing.JComboBox<>();
         Label_tipo_GT = new javax.swing.JLabel();
 
         setTitle("Gerenciar Teclado");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(883, 591));
-        setMinimumSize(new java.awt.Dimension(883, 591));
-        setPreferredSize(new java.awt.Dimension(883, 591));
+        setMaximumSize(new java.awt.Dimension(1087, 588));
+        setMinimumSize(new java.awt.Dimension(1087, 588));
+        setPreferredSize(new java.awt.Dimension(1087, 588));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jTableTeclado_GT.setBackground(new java.awt.Color(204, 204, 204));
@@ -117,7 +119,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         }
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 60, 820, 110);
+        jScrollPane1.setBounds(30, 50, 1030, 120);
 
         b_cancelar_GT.setText("Cancelar");
         b_cancelar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +128,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_cancelar_GT);
-        b_cancelar_GT.setBounds(200, 490, 90, 25);
+        b_cancelar_GT.setBounds(320, 500, 90, 25);
 
         b_deletar_GT.setText("Deletar");
         b_deletar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +137,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_deletar_GT);
-        b_deletar_GT.setBounds(380, 490, 80, 25);
+        b_deletar_GT.setBounds(500, 500, 80, 25);
 
         b_alterar_GT.setText("Alterar");
         b_alterar_GT.addActionListener(new java.awt.event.ActionListener() {
@@ -144,90 +146,95 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(b_alterar_GT);
-        b_alterar_GT.setBounds(550, 490, 80, 25);
+        b_alterar_GT.setBounds(670, 500, 80, 25);
 
         Label_nome_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_nome_GT.setText("Nome do produto:");
         getContentPane().add(Label_nome_GT);
-        Label_nome_GT.setBounds(120, 230, 110, 20);
+        Label_nome_GT.setBounds(200, 220, 110, 20);
         getContentPane().add(nome_GT);
-        nome_GT.setBounds(230, 230, 199, 22);
+        nome_GT.setBounds(310, 220, 199, 22);
 
         Label_marca_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_marca_GT.setText("Marca: ");
         getContentPane().add(Label_marca_GT);
-        Label_marca_GT.setBounds(140, 260, 50, 16);
+        Label_marca_GT.setBounds(220, 260, 50, 16);
         getContentPane().add(marca_GT);
-        marca_GT.setBounds(190, 260, 160, 22);
+        marca_GT.setBounds(270, 260, 160, 22);
 
         Label_modelo_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_modelo_GT.setText("Modelo:");
         getContentPane().add(Label_modelo_GT);
-        Label_modelo_GT.setBounds(130, 290, 60, 16);
+        Label_modelo_GT.setBounds(210, 300, 60, 16);
         getContentPane().add(modelo_GT);
-        modelo_GT.setBounds(190, 290, 160, 22);
+        modelo_GT.setBounds(270, 300, 160, 22);
 
         Label_preco_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_preco_GT.setText("Preço:");
         getContentPane().add(Label_preco_GT);
-        Label_preco_GT.setBounds(140, 320, 44, 16);
+        Label_preco_GT.setBounds(220, 340, 44, 16);
         getContentPane().add(preco_GT);
-        preco_GT.setBounds(190, 320, 92, 22);
+        preco_GT.setBounds(270, 340, 92, 22);
 
         Label_qtdestoque_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_qtdestoque_GT.setText("Quant. Estoque:");
         getContentPane().add(Label_qtdestoque_GT);
-        Label_qtdestoque_GT.setBounds(90, 350, 100, 16);
+        Label_qtdestoque_GT.setBounds(170, 380, 100, 16);
         getContentPane().add(qtdestoque_GT);
-        qtdestoque_GT.setBounds(190, 350, 90, 22);
+        qtdestoque_GT.setBounds(270, 380, 90, 22);
 
         Label_dimensao_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_dimensao_GT.setText("Dimensão: ");
         getContentPane().add(Label_dimensao_GT);
-        Label_dimensao_GT.setBounds(460, 230, 70, 16);
+        Label_dimensao_GT.setBounds(600, 230, 70, 16);
         getContentPane().add(dimensao_GT);
-        dimensao_GT.setBounds(530, 230, 153, 22);
+        dimensao_GT.setBounds(670, 230, 153, 22);
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Conectividade:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(440, 260, 90, 16);
+        jLabel1.setBounds(580, 280, 90, 16);
         getContentPane().add(conectividade_GT);
-        conectividade_GT.setBounds(530, 260, 153, 22);
+        conectividade_GT.setBounds(670, 280, 153, 22);
 
         Label_descricao_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_descricao_GT.setText("Descrição (opcional):");
         getContentPane().add(Label_descricao_GT);
-        Label_descricao_GT.setBounds(410, 300, 120, 16);
+        Label_descricao_GT.setBounds(550, 330, 120, 16);
 
         descricao_GT.setColumns(20);
         descricao_GT.setRows(5);
         jScrollPane2.setViewportView(descricao_GT);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(530, 300, 230, 90);
+        jScrollPane2.setBounds(670, 330, 230, 90);
 
         datacadastro_GT.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(datacadastro_GT);
-        datacadastro_GT.setBounds(190, 390, 100, 22);
+        datacadastro_GT.setBounds(270, 420, 100, 22);
 
         Label_datacadastro_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_datacadastro_GT.setText("Data de cadastro:");
         getContentPane().add(Label_datacadastro_GT);
-        Label_datacadastro_GT.setBounds(80, 390, 110, 16);
+        Label_datacadastro_GT.setBounds(160, 420, 110, 16);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACKGROUND GT CONVERTED.jpg"))); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel3.setText("Gerenciar Teclado @");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(930, 530, 130, 30);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BACKGROUND GT 1090.png"))); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 880, 590);
+        jLabel2.setBounds(0, 0, 1160, 590);
 
         tipo_GT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teclado" }));
         getContentPane().add(tipo_GT);
-        tipo_GT.setBounds(730, 190, 100, 20);
+        tipo_GT.setBounds(940, 190, 100, 20);
 
         Label_tipo_GT.setForeground(new java.awt.Color(255, 255, 255));
         Label_tipo_GT.setText("Tipo:");
         getContentPane().add(Label_tipo_GT);
-        Label_tipo_GT.setBounds(690, 190, 40, 16);
+        Label_tipo_GT.setBounds(900, 190, 40, 16);
 
         pack();
         setLocationRelativeTo(null);
@@ -510,6 +517,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JTextField dimensao_GT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableTeclado_GT;

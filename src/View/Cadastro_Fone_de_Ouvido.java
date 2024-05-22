@@ -63,8 +63,9 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         c_conectividade = new javax.swing.JComboBox<>();
         b_cancelar = new javax.swing.JButton();
         b_cadastrar = new javax.swing.JButton();
-        c_data = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
         c_tipo = new javax.swing.JComboBox<>();
+        c_data = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -73,13 +74,12 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setTitle("Cadastro Fone de Ouvido");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(255, 102, 51));
         jLabel1.setText("Nome:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\OneDrive\\Área de Trabalho\\download__1_-removebg-preview.png")); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 280, 230));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +91,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(255, 102, 0));
         jLabel2.setText("Tipo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 37, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 37, -1));
         getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 76, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 102, 51));
@@ -159,7 +159,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 b_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 92, 33));
+        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 92, 33));
 
         b_cadastrar.setText("Cadastrar");
         b_cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -167,12 +167,13 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 b_cadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 102, 33));
+        getContentPane().add(b_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 102, 33));
 
-        c_data.setDateFormatString("dd '/' MM '/' y");
-        c_data.setMinSelectableDate(new java.util.Date(-62135755087000L));
-        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 110, -1));
+        jLabel10.setForeground(new java.awt.Color(255, 102, 0));
+        jLabel10.setText("Cadastrar Fone @");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 110, -1));
 
+        c_tipo.setBackground(new java.awt.Color(255, 102, 51));
         c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
         c_tipo.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
@@ -184,11 +185,14 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 c_tipoActionPerformed(evt);
             }
         });
-        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 183, -1));
+        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 130, -1));
+
+        c_data.setDateFormatString("dd '/' MM '/' y");
+        c_data.setMinSelectableDate(new java.util.Date(-62135755087000L));
+        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 110, -1));
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Design sem nome.png"))); // NOI18N
-        jLabel9.setText("jLabel9");
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 480));
 
         pack();
@@ -400,6 +404,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> c_tipo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;

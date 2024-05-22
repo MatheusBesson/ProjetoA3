@@ -59,6 +59,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
         Label_conectividadeTeclado_CT = new javax.swing.JLabel();
         dimensao_CT = new javax.swing.JTextField();
         conectividade_CT = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         b_cancelar_CT = new javax.swing.JButton();
         b_cadastrar_CT = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -82,6 +83,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
 
         setTitle("Cadastrar Teclado");
         setMinimumSize(new java.awt.Dimension(800, 550));
+        setResizable(false);
         setSize(new java.awt.Dimension(800, 550));
         getContentPane().setLayout(null);
 
@@ -191,6 +193,11 @@ public class CadastroTeclado extends javax.swing.JFrame {
         conectividade_CT.setBackground(new java.awt.Color(204, 204, 204));
         getContentPane().add(conectividade_CT);
         conectividade_CT.setBounds(500, 370, 177, 22);
+
+        jLabel2.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel2.setText("Cadastrar Teclado @");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(640, 490, 130, 16);
 
         b_cancelar_CT.setText("Cancelar");
         b_cancelar_CT.addActionListener(new java.awt.event.ActionListener() {
@@ -512,6 +519,7 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JTextField dimensao_CT;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

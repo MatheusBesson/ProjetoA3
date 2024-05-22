@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package View;
 
 import Model.Fone_de_Ouvido;
@@ -12,12 +16,16 @@ import java.text.SimpleDateFormat;
 import javax.swing.text.DateFormatter;
 import View.Mensagens;
 import javax.swing.JOptionPane;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
 
     private Fone_de_Ouvido objFone; //Cria vinculo com o Fone
 //    private JDateChooser c_data;
-    
+
     public Cadastro_Fone_de_Ouvido() {
         initComponents();
         this.objFone = new Fone_de_Ouvido(); //Cria um vinculo e carrega objeto vazio de Fone de Ouvido
@@ -35,6 +43,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         c_nome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         c_preco = new javax.swing.JTextField();
@@ -56,6 +65,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         b_cadastrar = new javax.swing.JButton();
         c_data = new com.toedter.calendar.JDateChooser();
         c_tipo = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -65,56 +75,75 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         setTitle("Cadastro Fone de Ouvido");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setForeground(new java.awt.Color(255, 102, 51));
         jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 29, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\OneDrive\\Área de Trabalho\\download__1_-removebg-preview.png")); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 280, 230));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 298, -1));
+        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 298, -1));
 
+        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
         jLabel2.setText("Tipo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 37, -1));
-        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 69, 76, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 37, -1));
+        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 76, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 102, 51));
         jLabel3.setText("Preço:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 72, 37, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 37, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Descrição(Opcicional:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 130, -1));
-        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 341, 73));
+        jLabel4.setForeground(new java.awt.Color(255, 102, 51));
+        jLabel4.setText("Descrição(Opcicional):");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 130, -1));
+        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 240, 73));
 
+        jLabel5.setForeground(new java.awt.Color(255, 102, 51));
         jLabel5.setText("Marca:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 112, 51, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 51, -1));
 
+        jLabel6.setForeground(new java.awt.Color(255, 102, 51));
         jLabel6.setText("Modelo:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 52, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 52, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 102, 51));
         jLabel7.setText("Quantidade em Estoque:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
+        jLabel8.setForeground(new java.awt.Color(255, 102, 51));
         jLabel8.setText("Data de Cadastro:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 155, -1, -1));
-        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 109, 153, -1));
-        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 341, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 153, -1));
+        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 240, -1));
 
         c_qtd_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_qtd_estoqueActionPerformed(evt);
             }
         });
-        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 147, -1));
+        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 147, -1));
 
+        jLabel11.setForeground(new java.awt.Color(255, 102, 51));
         jLabel11.setText("Conectividade do Fone:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
 
+        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel12.setForeground(new java.awt.Color(255, 102, 51));
         jLabel12.setText("Material:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 266, 55, -1));
-        getContentPane().add(c_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 263, 188, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 60, -1));
+
+        c_material.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_materialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(c_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, 188, -1));
 
         c_conectividade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Com fio", "Sem fio" }));
         c_conectividade.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +151,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 c_conectividadeActionPerformed(evt);
             }
         });
-        getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 150, -1));
+        getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 150, -1));
 
         b_cancelar.setText("Cancelar");
         b_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +159,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 b_cancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(675, 337, 92, 33));
+        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 92, 33));
 
         b_cadastrar.setText("Cadastrar");
         b_cadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -138,11 +167,11 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 b_cadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(b_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(785, 337, 102, 33));
+        getContentPane().add(b_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 102, 33));
 
         c_data.setDateFormatString("dd '/' MM '/' y");
         c_data.setMinSelectableDate(new java.util.Date(-62135755087000L));
-        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 149, 203, -1));
+        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 110, -1));
 
         c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
         c_tipo.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -155,7 +184,12 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 c_tipoActionPerformed(evt);
             }
         });
-        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 183, -1));
+        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 183, -1));
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Design sem nome.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -170,78 +204,106 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     }//GEN-LAST:event_b_cancelarActionPerformed
 
     private void b_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_cadastrarActionPerformed
+
         try {
-            //recebendo e validando dados da interface gráfica.20
+            //recebendo e validando dados da interface gráfica.
             String nome = "";
             String tipo = "";
             float preco = 0;
             String descricao = "";
             String marca = "";
             String modelo = "";
-            int qtd_estoque =  0; 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            int qtd_estoque = 0;
+//            String data_cadastro;
+//            LocalDateTime data_cadastro;
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             String data_cadastro = sdf.format(c_data.getDate());
             String conectividade_do_fone = "";
             String material = "";
-            
-            
-            
-            if (this.c_nome.getText().length() < 2 || this.c_nome.getText().length() > 45 ) {
+
+            if (this.c_nome.getText().length() < 2 || this.c_nome.getText().length() > 45) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 nome = this.c_nome.getText();
             }
-            if (this.c_tipo.getSelectedItem() == "Fone de Ouvido"){
+            if (this.c_tipo.getSelectedItem() == "Fone de Ouvido") {
                 tipo = this.c_tipo.getSelectedItem().toString();
             } else {
-                throw new Mensagens ("Tipo de produto inválido!");
+                throw new Mensagens("Tipo de produto inválido!");
             }
-            if (this.c_preco.getText().length() <= 0) {
-                throw new Mensagens("Preço deve ser maior ou igual a zero.");
-            } else {
-                preco = Float.parseFloat(this.c_preco.getText());
+            try {
+                float preco2 = Float.parseFloat(this.c_preco.getText());
+
+                if (preco2 < 0 || preco2 > 50000) {
+                    throw new Mensagens("O preço não pode ser menor que ZERO ou maior que CINQUENTA MIL!");
+                } else {
+                    preco = Float.parseFloat(this.c_preco.getText());
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("O valor inserido não é um número válido!");
             }
-            if (this.c_descricao.getText().length() < 5 || this.c_descricao.getText().length() >250) {
+//            if (this.c_preco.getText().length() <= 0) {
+//                throw new Mensagens("Preço deve ser maior ou igual a zero.");
+//            } else {
+//                preco = Float.parseFloat(this.c_preco.getText());
+//            }
+            if (this.c_descricao.getText().length() < 5 || this.c_descricao.getText().length() > 250) {
                 throw new Mensagens("Descrição deve conter ao menos 5 caracteres e menos de 250 caracteres.");
             } else {
                 descricao = this.c_descricao.getText();
             }
+//            Date date = c_data.getDate();
+//        if (date == null) {
+//            throw new Mensagens("Insira uma data válida");
+//        } else {
+//            data_cadastro = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+//        }
+             
+            
             if (this.c_data.getDate() == null) { 
                 throw new Mensagens("Insira uma data valida");
             } else {
                 data_cadastro = sdf.format(this.c_data.getDate());                
             }
-            if (this.c_qtd_estoque.getText().length() <0) {  
-               throw new Mensagens("Estoque não pode ser negativo");
-            } else {
+            try {
                 qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
-            } 
-            if (this.c_marca.getText().length() < 2 || this.c_marca.getText().length() > 45 ) {
+                if (qtd_estoque < 0) {
+                    throw new Mensagens("Estoque não pode ser negativo");
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("Quantidade em estoque deve ser um número válido");
+            }
+//            if (this.c_qtd_estoque.getText().length() <0) {  
+//               throw new Mensagens("Estoque não pode ser negativo");
+//            } else {
+//                qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
+//            } 
+            if (this.c_marca.getText().length() < 2 || this.c_marca.getText().length() > 45) {
                 throw new Mensagens("Marca deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 marca = this.c_marca.getText();
             }
-            if (this.c_modelo.getText().length() < 2 || this.c_modelo.getText().length() > 45 ) {
+            if (this.c_modelo.getText().length() < 2 || this.c_modelo.getText().length() > 45) {
                 throw new Mensagens("Modelo deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 modelo = this.c_modelo.getText();
             }
-            if (this.c_conectividade.getSelectedItem().toString().length() < 2 || this.c_conectividade.getSelectedItem().toString().length() > 45 ) {
+            if (this.c_conectividade.getSelectedItem().toString().length() < 2 || this.c_conectividade.getSelectedItem().toString().length() > 45) {
                 throw new Mensagens("Conectividade deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 conectividade_do_fone = this.c_conectividade.getSelectedItem().toString();
             }
-            if (this.c_material.getText().length() < 2 || this.c_material.getText().length() > 45 ) {
+            if (this.c_material.getText().length() < 2 || this.c_material.getText().length() > 45) {
                 throw new Mensagens("Nome deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
                 material = this.c_material.getText();
             }
-            
+
             // envia os dados para o Controlador cadastrar
             if (this.objFone.InsertFoneBD(conectividade_do_fone, material, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro)) {
                 JOptionPane.showMessageDialog(rootPane, "Fone de Ouvido Cadastrado com Sucesso!");
-                
-            // limpa campos da interface
+
+                // limpa campos da interface
                 this.c_nome.setText("");
                 this.c_tipo.setSelectedItem("Fone de Ouvido");
                 this.c_preco.setText("");
@@ -252,15 +314,17 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 this.c_data.setDate(null);
                 this.c_conectividade.setSelectedItem("");
                 this.c_material.setText("");
-                
-        
-        }         
-         System.out.println(this.objFone.getMinhaLista().toString());
+
+            }
+
+            System.out.println(this.objFone.getMinhaLista().toString());
 
         } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um numero.");
+        } catch (NullPointerException erroNull) {
+            JOptionPane.showMessageDialog(null, "Preencha o campo data!");
         } catch (SQLException ex) {
             Logger.getLogger(Cadastro_Fone_de_Ouvido.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -281,9 +345,11 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private void c_conectividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_conectividadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_c_conectividadeActionPerformed
-        
-        
-       
+
+    private void c_materialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_materialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_materialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -336,6 +402,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -343,6 +410,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

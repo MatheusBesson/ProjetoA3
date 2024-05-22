@@ -3,7 +3,6 @@ package Model;
 import java.util.*;
 import DAO.Fone_de_OuvidoDAO;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class Fone_de_Ouvido extends Produto {
     

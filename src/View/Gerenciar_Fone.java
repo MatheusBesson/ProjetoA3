@@ -45,9 +45,9 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         c_nome = new javax.swing.JTextField();
+        c_tipo = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         c_material = new javax.swing.JTextField();
-        c_tipo = new javax.swing.JTextField();
         c_preco = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         b_cancelar = new javax.swing.JButton();
@@ -58,10 +58,13 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         b_apagar = new javax.swing.JButton();
         c_data = new com.toedter.calendar.JDateChooser();
         c_conectividade = new javax.swing.JComboBox<>();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
 
         setTitle("Gerenciamento Fone de Ouvido");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTableFone.setBackground(new java.awt.Color(204, 204, 204));
+        jTableFone.setForeground(new java.awt.Color(255, 102, 0));
         jTableFone.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null},
@@ -81,6 +84,9 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableFone.setGridColor(new java.awt.Color(0, 153, 255));
+        jTableFone.setSelectionBackground(new java.awt.Color(0, 0, 102));
+        jTableFone.setSelectionForeground(new java.awt.Color(255, 102, 0));
         jTableFone.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableFoneMouseClicked(evt);
@@ -88,27 +94,54 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTableFone);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 1110, 140));
+
+        jLabel6.setForeground(new java.awt.Color(255, 102, 0));
         jLabel6.setText("Modelo:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 52, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 102, 0));
         jLabel7.setText("Quantidade em Estoque:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
 
+        jLabel8.setForeground(new java.awt.Color(255, 102, 0));
         jLabel8.setText("Data de Cadastro:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, -1, -1));
+        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 300, 153, -1));
+        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 341, -1));
+        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 143, -1));
 
+        jLabel11.setForeground(new java.awt.Color(255, 102, 0));
         jLabel11.setText("conectividade do fone:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, -1, -1));
 
+        jLabel12.setForeground(new java.awt.Color(255, 102, 0));
         jLabel12.setText("Material:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 55, -1));
 
+        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
         jLabel1.setText("Nome:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
             }
         });
+        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 298, -1));
 
+        c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
+        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 220, 210, -1));
+
+        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
         jLabel2.setText("Tipo:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 37, -1));
+        getContentPane().add(c_material, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 188, -1));
+        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 76, -1));
 
+        jLabel3.setForeground(new java.awt.Color(255, 102, 0));
         jLabel3.setText("Preço:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 37, -1));
 
         b_cancelar.setText("Cancelar");
         b_cancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +149,11 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 b_cancelarActionPerformed(evt);
             }
         });
+        getContentPane().add(b_cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 522, 92, 33));
 
+        jLabel4.setForeground(new java.awt.Color(255, 102, 0));
         jLabel4.setText("Descrição:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 390, 64, -1));
 
         b_alterar.setText("Alterar");
         b_alterar.addActionListener(new java.awt.event.ActionListener() {
@@ -125,8 +161,12 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 b_alterarActionPerformed(evt);
             }
         });
+        getContentPane().add(b_alterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(805, 522, 102, 33));
+        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, 341, 73));
 
+        jLabel5.setForeground(new java.awt.Color(255, 102, 0));
         jLabel5.setText("Marca:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 46, -1));
 
         b_apagar.setText("Apagar");
         b_apagar.addActionListener(new java.awt.event.ActionListener() {
@@ -134,143 +174,18 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 b_apagarActionPerformed(evt);
             }
         });
+        getContentPane().add(b_apagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(919, 522, 85, 33));
 
-        c_data.setDateFormatString("dd/MM/yyyy");
+        c_data.setDateFormatString("dd '/' MM '/' y");
+        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 119, -1));
 
         c_conectividade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Com fio", "Sem fio" }));
+        getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(c_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(c_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(c_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(c_conectividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_material, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(8, 8, 8)
-                        .addComponent(c_data, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)
-                        .addComponent(c_qtd_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(b_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(b_apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(184, 184, 184))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(c_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(c_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(c_preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(c_qtd_estoque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(c_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(c_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(c_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(c_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel11)
-                                    .addComponent(c_conectividade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(c_material, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(b_alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(b_apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Design sem nome.png"))); // NOI18N
+        jLabel9.setText("jLabel9");
+        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1190, 630));
 
         pack();
         setLocationRelativeTo(null);
@@ -300,14 +215,14 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             Date data_cadastro = null;
 
             this.c_nome.setText(nome);
-            this.c_tipo.setText(tipo);
+            this.c_tipo.setSelectedItem("Fone de Ouvido");
             this.c_preco.setText(preco);
             this.c_descricao.setText(descricao);
             this.c_marca.setText(marca);
             this.c_modelo.setText(modelo);
             this.c_qtd_estoque.setText(qtd_estoque);
             try {
-                data_cadastro = new SimpleDateFormat("yyyy-MM-dd").parse(data_cadastroString);
+                data_cadastro = new SimpleDateFormat("dd/MM/yyyy").parse(data_cadastroString);
             } catch (ParseException ex) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");               
             }
@@ -329,7 +244,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             String marca = "";
             String modelo = "";
             int qtd_estoque =  0;       
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             String data_cadastro = sdf.format(c_data.getDate());           
             String conectividade_do_fone = "";
             String material = "";
@@ -341,31 +256,50 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             } else {
                 nome = this.c_nome.getText();
             }
-            if (this.c_tipo.getText().length() < 2) {
-                throw new Mensagens("Tipo deve conter ao menos 2 caracteres.");
-            } else {
-                tipo = this.c_tipo.getText();
+            if (this.c_tipo.getSelectedItem() == "Fone de Ouvido"){
+                tipo = this.c_tipo.getSelectedItem().toString();
+            }  else {
+                throw new Mensagens ("Tipo de produto inválido!");
             }
-            if (this.c_preco.getText().length() <= 0) {
-                throw new Mensagens("Preço deve ser maior ou igual a zero.");
-            } else {
-                preco = Float.parseFloat(this.c_preco.getText());
+             try {
+                float preco2 = Float.parseFloat(this.c_preco.getText());
+
+                if (preco2 < 0 || preco2 > 50000) {
+                    throw new Mensagens("O preço não pode ser menor que ZERO ou maior que CINQUENTA MIL!");
+                } else {
+                    preco = Float.parseFloat(this.c_preco.getText());
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("O valor inserido não é um número válido!");
             }
+//            if (this.c_preco.getText().length() <= 0) {
+//                throw new Mensagens("Preço deve ser maior ou igual a zero.");
+//            } else {
+//                preco = Float.parseFloat(this.c_preco.getText());
+//            }
             if (this.c_descricao.getText().length() < 5 || this.c_descricao.getText().length() >250) {
                 throw new Mensagens("Descrição deve conter ao menos 5 caracteres e menos de 250 caracteres.");
             } else {
                 descricao = this.c_descricao.getText();
             }
-            if (this.c_data.getDate() == null) { //if (dateChooser.getDate() == null) { testar assim
+            if (this.c_data.getDate() == null) { 
                 throw new Mensagens("Insira uma data valida");
             } else {
                 data_cadastro = sdf.format(this.c_data.getDate());                  
             }
-            if (this.c_qtd_estoque.getText().length() <0) {  
-               throw new Mensagens("Estoque não pode ser negativo");
-            } else {
+            try {
                 qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
-            } 
+                if (qtd_estoque < 0) {
+                    throw new Mensagens("Estoque não pode ser negativo");
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("Quantidade em estoque deve ser um número válido");
+            }
+//            if (this.c_qtd_estoque.getText().length() <0) {  
+//               throw new Mensagens("Estoque não pode ser negativo");
+//            } else {
+//                qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
+//            } 
             if (this.c_marca.getText().length() < 2 || this.c_marca.getText().length() > 45 ) {
                 throw new Mensagens("Marca deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
@@ -398,7 +332,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
                 
             // limpa campos da interface
                 this.c_nome.setText("");
-                this.c_tipo.setText("");
+                this.c_tipo.setSelectedItem("Fone de Ouvido");
                 this.c_preco.setText("");
                 this.c_descricao.setText("");
                 this.c_marca.setText("");
@@ -427,7 +361,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             // validando dados da interface grafica.
             int id = 0;
             if (this.jTableFone.getSelectedRow() == -1) {
-                throw new Mensagens("Primeiro Selecione um Fone de Ouvido para APAGAR");
+                throw new Mensagens("Primeiro Selecione um Fonede Ouvido para APAGAR");
             } else {
                 id = Integer.parseInt(this.jTableFone.getValueAt(this.jTableFone.getSelectedRow(), 0).toString());
             }
@@ -442,7 +376,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
 
                     // limpa os campos
                     this.c_nome.setText("");
-                this.c_tipo.setText("Fone");
+                this.c_tipo.setSelectedItem("Fone de Ouvido");
                 this.c_preco.setText("");
                 this.c_descricao.setText("");
                 this.c_marca.setText("");
@@ -539,7 +473,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
     private javax.swing.JTextField c_nome;
     private javax.swing.JTextField c_preco;
     private javax.swing.JTextField c_qtd_estoque;
-    private javax.swing.JTextField c_tipo;
+    private javax.swing.JComboBox<String> c_tipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -550,7 +484,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableFone;
     // End of variables declaration//GEN-END:variables

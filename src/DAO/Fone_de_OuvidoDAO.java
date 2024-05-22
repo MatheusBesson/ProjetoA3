@@ -21,7 +21,7 @@ public class Fone_de_OuvidoDAO {
         int maiorID = 0;
         try {
             Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT MAX(id) id FROM produtos.tb_fone_de_ouvido");
+            ResultSet res = stmt.executeQuery("SELECT MAX(id) id FROM tb_Fone_de_Ouvido");
             res.next();
             maiorID = res.getInt("id");
 
@@ -45,10 +45,10 @@ public class Fone_de_OuvidoDAO {
 
             // Configurar a conex�o
             String server = "localhost"; //caminho do MySQL
-            String database = "produtos";
+            String database = "db_epic";
             String url = "jdbc:mysql://" + server + ":3306/" + database + "?useTimezone=true&serverTimezone=UTC";
             String user = "root";
-            String password = "vesku222skay";
+            String password = "Gremio1307";
 
             connection = DriverManager.getConnection(url, user, password);
 
@@ -78,7 +78,7 @@ public class Fone_de_OuvidoDAO {
 
         try {
             Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_fone_de_ouvido");
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_Fone_de_Ouvido");
             while (res.next()) {
 
                 
@@ -113,7 +113,7 @@ public class Fone_de_OuvidoDAO {
 
     // Cadastra novo aluno
     public boolean InsertFoneBD(Fone_de_Ouvido objeto) {
-        String sql = "INSERT INTO produtos.tb_fone_de_ouvido(id,nome,tipo,preco,descricao,marca,modelo,qtd_estoque,data_cadastro, conectividade_do_fone,material) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO tb_Fone_de_Ouvido(id,nome,tipo,preco,descricao,marca,modelo,qtd_estoque,data_cadastro, conectividade_do_fone,material) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -146,7 +146,7 @@ public class Fone_de_OuvidoDAO {
     public boolean DeleteFoneBD(int id) {
         try {
             Statement stmt = this.getConexao().createStatement();
-            stmt.executeUpdate("DELETE FROM produtos.tb_fone_de_ouvido WHERE id = " + id);
+            stmt.executeUpdate("DELETE FROM tb_Fone_de_Ouvido WHERE id = " + id);
             stmt.close();            
             
         } catch (SQLException erro) {
@@ -158,7 +158,7 @@ public class Fone_de_OuvidoDAO {
     // Edita um aluno espec�fico pelo seu campo ID
     public boolean UpdateFoneBD(Fone_de_Ouvido objeto) {
 
-        String sql = "UPDATE produtos.tb_fone_de_ouvido set nome = ? ,tipo = ? ,preco = ? ,descricao = ? , marca = ?,modelo = ?,qtd_estoque = ?,data_cadastro = ?,conectividade_do_fone = ?,material = ? WHERE id = ?";
+        String sql = "UPDATE tb_Fone_de_Ouvido set nome = ? ,tipo = ? ,preco = ? ,descricao = ? , marca = ?,modelo = ?,qtd_estoque = ?,data_cadastro = ?,conectividade_do_fone = ?,material = ? WHERE id = ?";
 
         try {
             PreparedStatement stmt = this.getConexao().prepareStatement(sql);
@@ -193,7 +193,7 @@ public class Fone_de_OuvidoDAO {
         
         try {
             Statement stmt = this.getConexao().createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_fone_de_ouvido WHERE id = " + id);
+            ResultSet res = stmt.executeQuery("SELECT * FROM tb_Fone_de_Ouvido WHERE id = " + id);
             res.next();
 
             objeto.setNome(res.getString("nome"));
@@ -215,4 +215,5 @@ public class Fone_de_OuvidoDAO {
         }
         return objeto;
     }
+   
 }

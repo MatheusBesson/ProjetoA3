@@ -219,7 +219,7 @@ public class GerenciaTeclado extends javax.swing.JFrame {
         Label_datacadastro_GT.setBounds(160, 420, 110, 16);
 
         jLabel3.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel3.setText("Gerenciar Teclado @");
+        jLabel3.setText("Épic Perifericos @");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(930, 530, 130, 30);
 

@@ -195,7 +195,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
         conectividade_CT.setBounds(500, 370, 177, 22);
 
         jLabel2.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel2.setText("Cadastrar Teclado @");
+        jLabel2.setText("Épic Perifericos @");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(640, 490, 130, 16);
 
@@ -270,7 +270,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
 
         TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
         getContentPane().add(TECLADOIMAGE_CT);
-        TECLADOIMAGE_CT.setBounds(400, 130, 330, 140);
+        TECLADOIMAGE_CT.setBounds(390, 130, 330, 140);
 
         BACKGROUND_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FundoCadastroTeclados (1).jpg"))); // NOI18N
         getContentPane().add(BACKGROUND_CT);

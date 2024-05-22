@@ -127,7 +127,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
                 c_qtd_estoqueActionPerformed(evt);
             }
         });
-        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 147, -1));
+        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 147, -1));
 
         jLabel11.setForeground(new java.awt.Color(255, 102, 51));
         jLabel11.setText("Conectividade do Fone:");
@@ -170,7 +170,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         getContentPane().add(b_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, 102, 33));
 
         jLabel10.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel10.setText("Cadastrar Fone @");
+        jLabel10.setText("Épic Perifericos @");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 110, -1));
 
         c_tipo.setBackground(new java.awt.Color(255, 102, 51));

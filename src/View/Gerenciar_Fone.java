@@ -187,7 +187,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         getContentPane().add(c_conectividade, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 250, 100, -1));
 
         jLabel10.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel10.setText("Gerenciar Fone @");
+        jLabel10.setText("Épic Perifericos @");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 540, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N

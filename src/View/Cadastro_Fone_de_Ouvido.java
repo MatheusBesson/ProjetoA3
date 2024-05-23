@@ -45,7 +45,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         c_nome = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         c_preco = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -53,7 +52,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         c_marca = new javax.swing.JTextField();
         c_modelo = new javax.swing.JTextField();
         c_qtd_estoque = new javax.swing.JTextField();
@@ -64,9 +62,9 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         b_cancelar = new javax.swing.JButton();
         b_cadastrar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         c_tipo = new javax.swing.JComboBox<>();
         c_data = new com.toedter.calendar.JDateChooser();
-        jLabel9 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -79,57 +77,55 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
 
         jLabel1.setForeground(new java.awt.Color(255, 102, 51));
         jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Imagem Fone de Ouvido.png"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 250, 240));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 300, 260));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 298, -1));
+        getContentPane().add(c_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 298, -1));
 
-        jLabel2.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel2.setText("Tipo:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 37, -1));
-        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 76, -1));
+        c_preco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_precoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(c_preco, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 76, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 102, 51));
         jLabel3.setText("Preço:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 37, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 37, -1));
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 0));
         jLabel4.setForeground(new java.awt.Color(255, 102, 51));
         jLabel4.setText("Descrição(Opcicional):");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 130, -1));
-        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 240, 73));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 130, -1));
+        getContentPane().add(c_descricao, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 210, 73));
 
         jLabel5.setForeground(new java.awt.Color(255, 102, 51));
         jLabel5.setText("Marca:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 51, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 51, -1));
 
         jLabel6.setForeground(new java.awt.Color(255, 102, 51));
         jLabel6.setText("Modelo:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 52, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 52, -1));
 
         jLabel7.setForeground(new java.awt.Color(255, 102, 51));
         jLabel7.setText("Quantidade em Estoque:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
-
-        jLabel8.setForeground(new java.awt.Color(255, 102, 51));
-        jLabel8.setText("Data de Cadastro:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 153, -1));
-        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 240, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        getContentPane().add(c_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 280, -1));
+        getContentPane().add(c_modelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 240, -1));
 
         c_qtd_estoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_qtd_estoqueActionPerformed(evt);
             }
         });
-        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 147, -1));
+        getContentPane().add(c_qtd_estoque, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 120, -1));
 
         jLabel11.setForeground(new java.awt.Color(255, 102, 51));
         jLabel11.setText("Conectividade do Fone:");
@@ -175,6 +171,10 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel10.setText("Épic Perifericos @");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 450, 110, -1));
 
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 480));
+
         c_tipo.setBackground(new java.awt.Color(255, 102, 51));
         c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
         c_tipo.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -191,11 +191,8 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
 
         c_data.setDateFormatString("dd '/' MM '/' y");
         c_data.setMinSelectableDate(new java.util.Date(-62135755087000L));
-        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 110, -1));
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 480));
+        getContentPane().add(c_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 110, -1));
+        c_data.setVisible(false);
 
         pack();
         setLocationRelativeTo(null);
@@ -220,10 +217,9 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             String marca = "";
             String modelo = "";
             int qtd_estoque = 0;
-//            String data_cadastro;
-//            LocalDateTime data_cadastro;
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String data_cadastro = sdf.format(c_data.getDate());
+            String data_cadastro = "";
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            String data_cadastro = sdf.format(c_data.getDate());
             String conectividade_do_fone = "";
             String material = "";
 
@@ -248,29 +244,17 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
                 throw new Mensagens("O valor inserido não é um número válido!");
             }
-//            if (this.c_preco.getText().length() <= 0) {
-//                throw new Mensagens("Preço deve ser maior ou igual a zero.");
-//            } else {
-//                preco = Float.parseFloat(this.c_preco.getText());
-//            }
             if (this.c_descricao.getText().length() < 5 || this.c_descricao.getText().length() > 250) {
                 throw new Mensagens("Descrição deve conter ao menos 5 caracteres e menos de 250 caracteres.");
             } else {
                 descricao = this.c_descricao.getText();
             }
-//            Date date = c_data.getDate();
-//        if (date == null) {
-//            throw new Mensagens("Insira uma data válida");
-//        } else {
-//            data_cadastro = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
-//        }
-             
-            
-            if (this.c_data.getDate() == null) { 
-                throw new Mensagens("Insira uma data valida");
-            } else {
-                data_cadastro = sdf.format(this.c_data.getDate());                
-            }
+            data_cadastro = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+//            if (this.c_data.getDate() == null) { 
+//                throw new Mensagens("Insira uma data valida");
+//            } else {
+//                data_cadastro = sdf.format(this.c_data.getDate());                
+//            }
             try {
                 qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
                 if (qtd_estoque < 0) {
@@ -279,11 +263,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             } catch (NumberFormatException e) {
                 throw new Mensagens("Quantidade em estoque deve ser um número válido");
             }
-//            if (this.c_qtd_estoque.getText().length() <0) {  
-//               throw new Mensagens("Estoque não pode ser negativo");
-//            } else {
-//                qtd_estoque = Integer.parseInt(this.c_qtd_estoque.getText());
-//            } 
             if (this.c_marca.getText().length() < 2 || this.c_marca.getText().length() > 45) {
                 throw new Mensagens("Marca deve conter ao menos 2 caracteres e menos de 45 caracteres.");
             } else {
@@ -356,6 +335,10 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_c_materialActionPerformed
 
+    private void c_precoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c_precoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_c_precoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -410,13 +393,11 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables

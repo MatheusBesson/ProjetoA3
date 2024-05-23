@@ -12,6 +12,8 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -51,7 +53,6 @@ public class CadastroTeclado extends javax.swing.JFrame {
         preco_CT = new javax.swing.JTextField();
         Label_qtdestoqueTeclado_CT = new javax.swing.JLabel();
         qtdestoque_CT = new javax.swing.JTextField();
-        Label_datadecadastroTeclado_CT = new javax.swing.JLabel();
         Label_descricaoTeclado_CT = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         descricao_CT = new javax.swing.JTextArea();
@@ -67,14 +68,13 @@ public class CadastroTeclado extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
-        datacadastro_CT = new com.toedter.calendar.JDateChooser();
-        tipo_CT = new javax.swing.JComboBox<>();
         TECLADOIMAGE_CT = new javax.swing.JLabel();
         BACKGROUND_CT = new javax.swing.JLabel();
+        tipo_CT = new javax.swing.JComboBox<>();
+        datacadastro_CT = new com.toedter.calendar.JDateChooser();
 
         jInternalFrame1.setVisible(true);
 
@@ -158,15 +158,10 @@ public class CadastroTeclado extends javax.swing.JFrame {
         getContentPane().add(qtdestoque_CT);
         qtdestoque_CT.setBounds(141, 279, 120, 22);
 
-        Label_datadecadastroTeclado_CT.setForeground(new java.awt.Color(255, 255, 255));
-        Label_datadecadastroTeclado_CT.setText("Data de Cadastro:");
-        getContentPane().add(Label_datadecadastroTeclado_CT);
-        Label_datadecadastroTeclado_CT.setBounds(58, 320, 107, 16);
-
         Label_descricaoTeclado_CT.setForeground(new java.awt.Color(255, 255, 255));
         Label_descricaoTeclado_CT.setText("Descrição(Opcional):");
         getContentPane().add(Label_descricaoTeclado_CT);
-        Label_descricaoTeclado_CT.setBounds(29, 364, 122, 16);
+        Label_descricaoTeclado_CT.setBounds(20, 330, 122, 16);
 
         descricao_CT.setBackground(new java.awt.Color(204, 204, 204));
         descricao_CT.setColumns(20);
@@ -174,7 +169,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
         jScrollPane1.setViewportView(descricao_CT);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(156, 364, 222, 102);
+        jScrollPane1.setBounds(150, 330, 222, 102);
 
         Label_dimensaoTeclado_CT.setForeground(new java.awt.Color(255, 255, 255));
         Label_dimensaoTeclado_CT.setText("Dimensão:");
@@ -237,13 +232,9 @@ public class CadastroTeclado extends javax.swing.JFrame {
         getContentPane().add(jPanel5);
         jPanel5.setBounds(20, 280, 100, 20);
 
-        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jPanel6);
-        jPanel6.setBounds(50, 320, 110, 20);
-
         jPanel7.setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jPanel7);
-        jPanel7.setBounds(20, 360, 130, 20);
+        jPanel7.setBounds(10, 330, 130, 20);
 
         jPanel8.setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jPanel8);
@@ -253,9 +244,13 @@ public class CadastroTeclado extends javax.swing.JFrame {
         getContentPane().add(jPanel9);
         jPanel9.setBounds(400, 370, 100, 20);
 
-        datacadastro_CT.setDateFormatString("dd/MM/yyyy");
-        getContentPane().add(datacadastro_CT);
-        datacadastro_CT.setBounds(170, 320, 100, 22);
+        TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
+        getContentPane().add(TECLADOIMAGE_CT);
+        TECLADOIMAGE_CT.setBounds(390, 130, 330, 140);
+
+        BACKGROUND_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FundoCadastroTeclados (1).jpg"))); // NOI18N
+        getContentPane().add(BACKGROUND_CT);
+        BACKGROUND_CT.setBounds(0, 0, 800, 520);
 
         tipo_CT.setBackground(new java.awt.Color(102, 0, 51));
         tipo_CT.setForeground(new java.awt.Color(255, 255, 255));
@@ -266,15 +261,13 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tipo_CT);
-        tipo_CT.setBounds(650, 70, 100, 24);
+        tipo_CT.setBounds(650, 70, 100, 22);
+        tipo_CT.setVisible(false);
 
-        TECLADOIMAGE_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tecladotrabalho (1).jpg"))); // NOI18N
-        getContentPane().add(TECLADOIMAGE_CT);
-        TECLADOIMAGE_CT.setBounds(390, 130, 330, 140);
-
-        BACKGROUND_CT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FundoCadastroTeclados (1).jpg"))); // NOI18N
-        getContentPane().add(BACKGROUND_CT);
-        BACKGROUND_CT.setBounds(0, 0, 800, 520);
+        datacadastro_CT.setDateFormatString("dd/MM/yyyy");
+        getContentPane().add(datacadastro_CT);
+        datacadastro_CT.setBounds(10, 480, 103, 22);
+        datacadastro_CT.setVisible(false);
 
         pack();
         setLocationRelativeTo(null);
@@ -329,9 +322,9 @@ public class CadastroTeclado extends javax.swing.JFrame {
           /*  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String dataAtual = dateFormat.format(new Date());
             datacadastro_CT.setDate(new Date(dataAtual)); */
-            
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String datacadastro_teclado = sdf.format(datacadastro_CT.getDate());
+            String datacadastro_teclado = "";
+//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//            String datacadastro_teclado = sdf.format(datacadastro_CT.getDate());
           
             String descricao_teclado = "";
             String dimensao_teclado = "";
@@ -398,13 +391,14 @@ public class CadastroTeclado extends javax.swing.JFrame {
             } else {
                 qtd_estoque_teclado = Integer.parseInt(this.qtdestoque_CT.getText());
             }
-
-            if (this.datacadastro_CT.getDate() == null) {
-                throw new Mensagens("A data precisa ser selecionada!");
-
-            } else {
-                datacadastro_teclado = sdf.format(this.datacadastro_CT.getDate());
-            }
+            
+            datacadastro_teclado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+//            if (this.datacadastro_CT.getDate() == null) {
+//                throw new Mensagens("A data precisa ser selecionada!");
+//
+//            } else {
+//                datacadastro_teclado = sdf.format(this.datacadastro_CT.getDate());
+//            }
             if (this.descricao_CT.getText().length() > 250) {
                 throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
             }
@@ -441,8 +435,8 @@ public class CadastroTeclado extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, erro.getMessage());
         } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Preencha o campo usando números!");
-        } catch (NullPointerException erroNull) {
-            JOptionPane.showMessageDialog(null, "Campo(s) não preenchido(s)!");
+//        } catch (NullPointerException erroNull) {
+//            JOptionPane.showMessageDialog(null, "Campo(s) não preenchido(s)!");
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(CadastroTeclado.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
@@ -508,7 +502,6 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BACKGROUND_CT;
     private javax.swing.JLabel Label_conectividadeTeclado_CT;
-    private javax.swing.JLabel Label_datadecadastroTeclado_CT;
     private javax.swing.JLabel Label_descricaoTeclado_CT;
     private javax.swing.JLabel Label_dimensaoTeclado_CT;
     private javax.swing.JLabel Label_marcaTeclado_CT;
@@ -531,7 +524,6 @@ Logger.getLogger(CadastroTeclado.class.getName()).log(Level.SEVERE, null, ex);
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;

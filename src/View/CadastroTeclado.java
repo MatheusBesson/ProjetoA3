@@ -325,8 +325,14 @@ public class CadastroTeclado extends javax.swing.JFrame {
             String modelo_teclado = "";
             float preco_teclado = 0;
             int qtd_estoque_teclado = 0;
+            
+          /*  SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String dataAtual = dateFormat.format(new Date());
+            datacadastro_CT.setDate(new Date(dataAtual)); */
+            
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String datacadastro_teclado = sdf.format(datacadastro_CT.getDate());
+          
             String descricao_teclado = "";
             String dimensao_teclado = "";
             String conectividade_teclado = "";

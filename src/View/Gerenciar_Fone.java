@@ -236,7 +236,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             this.c_modelo.setText(modelo);
             this.c_qtd_estoque.setText(qtd_estoque);
             try {
-                data_cadastro = new SimpleDateFormat("dd/MM/yyyy").parse(data_cadastroString);
+                data_cadastro = new SimpleDateFormat("yyyy-MM-dd").parse(data_cadastroString);
             } catch (ParseException ex) {
                 JOptionPane.showMessageDialog(rootPane, "Erro ao converter a data: ");               
             }
@@ -258,7 +258,7 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
             String marca = "";
             String modelo = "";
             int qtd_estoque =  0;       
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String data_cadastro = sdf.format(c_data.getDate());           
             String conectividade_do_fone = "";
             String material = "";

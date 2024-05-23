@@ -80,7 +80,9 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 102, 51));
         jLabel1.setText("Nome:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 280, 230));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Imagem Fone de Ouvido.png"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 250, 240));
 
         c_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +222,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             int qtd_estoque = 0;
 //            String data_cadastro;
 //            LocalDateTime data_cadastro;
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String data_cadastro = sdf.format(c_data.getDate());
             String conectividade_do_fone = "";
             String material = "";

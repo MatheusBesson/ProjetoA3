@@ -45,6 +45,8 @@ public class RelatorioTeclado extends javax.swing.JFrame {
 
         setMaximumSize(new java.awt.Dimension(1176, 621));
         setMinimumSize(new java.awt.Dimension(1176, 621));
+        setPreferredSize(new java.awt.Dimension(1176, 621));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel10.setForeground(new java.awt.Color(255, 102, 0));
@@ -126,6 +128,7 @@ public class RelatorioTeclado extends javax.swing.JFrame {
         jLabel1.setBounds(0, -4, 1180, 630);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTableTeclado_REMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTeclado_REMouseClicked

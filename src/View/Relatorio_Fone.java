@@ -29,6 +29,7 @@ public class Relatorio_Fone extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setTitle("Relatorio Fone de Ouvido");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTableFone.setModel(new javax.swing.table.DefaultTableModel(

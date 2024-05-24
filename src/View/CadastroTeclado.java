@@ -392,7 +392,7 @@ public class CadastroTeclado extends javax.swing.JFrame {
                 qtd_estoque_teclado = Integer.parseInt(this.qtdestoque_CT.getText());
             }
             
-            datacadastro_teclado = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            datacadastro_teclado = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 //            if (this.datacadastro_CT.getDate() == null) {
 //                throw new Mensagens("A data precisa ser selecionada!");
 //

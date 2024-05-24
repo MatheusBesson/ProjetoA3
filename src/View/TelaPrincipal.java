@@ -26,6 +26,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         B_fechar_TP = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -34,6 +36,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastrarteclado_TP = new javax.swing.JMenuItem();
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jmenuRelatorioTeclado = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
@@ -45,7 +48,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 204));
+        jButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jButton2.setText("Relatório Fone");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(630, 220, 160, 50);
+
+        jButton1.setBackground(new java.awt.Color(255, 102, 0));
+        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
+        jButton1.setText("Relatório Teclado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(110, 220, 160, 50);
+
+        B_fechar_TP.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         B_fechar_TP.setText("FECHAR");
+        B_fechar_TP.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         B_fechar_TP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_fechar_TPActionPerformed(evt);
@@ -82,7 +109,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1.setText("Gerar Relatorio");
 
-        jMenuItem2.setText("Gerar Relatorio Fone");
+        jmenuRelatorioTeclado.setText("Relatório Teclado");
+        jmenuRelatorioTeclado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmenuRelatorioTecladoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmenuRelatorioTeclado);
+
+        jMenuItem2.setText("Relatorio Fone");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem2ActionPerformed(evt);
@@ -158,6 +193,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jmenuRelatorioTecladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuRelatorioTecladoActionPerformed
+        RelatorioTeclado objeto = new RelatorioTeclado();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jmenuRelatorioTecladoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        RelatorioTeclado objeto = new RelatorioTeclado();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Relatorio_Fone objeto = new Relatorio_Fone();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -202,10 +252,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu ferramentas_TP;
     private javax.swing.JMenuItem gerenciarTeclado_TP;
     private javax.swing.JMenu gerenciar_fone_de_ouvido_TP;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jmenuRelatorioTeclado;
     // End of variables declaration//GEN-END:variables
 }

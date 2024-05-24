@@ -4,6 +4,7 @@
  */
 package DAO;
 
+import Model.Fone_de_Ouvido;
 import Model.Teclado;
 import com.mysql.cj.xdevapi.Statement;
 import com.sun.jdi.connect.spi.Connection;
@@ -85,7 +86,7 @@ public class TecladoDAO {
             java.sql.Statement stmt = this.getConexao().createStatement();
             ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_teclado");
             while (res.next()) {
-                
+
                 int id = res.getInt("id_Teclado");
                 String nome = res.getString("nome");
                 String tipo = res.getString("tipo");
@@ -97,7 +98,6 @@ public class TecladoDAO {
                 String dimensao = res.getString("dimensao");
                 String conectividade = res.getString("conectividade");
                 String descricao = res.getString("descricao");
-
 
                 Teclado objeto = new Teclado(dimensao, conectividade, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro);
 
@@ -127,7 +127,7 @@ public class TecladoDAO {
             stmt.setString(5, objeto.getMarca());
             stmt.setString(6, objeto.getModelo());
             stmt.setInt(7, objeto.getQtd_estoque());
-            stmt.setString(8,objeto.getData_cadastro());
+            stmt.setString(8, objeto.getData_cadastro());
             stmt.setString(9, objeto.getDimensao());
             stmt.setString(10, objeto.getConectividade());
             stmt.setString(11, objeto.getDescricao());
@@ -207,7 +207,6 @@ public class TecladoDAO {
             objeto.setDimensao(res.getString("Dimensão"));
             objeto.setConectividade(res.getString("conectividade"));
             objeto.setDescricao(res.getString("descricao"));
-   
 
             stmt.close();
 
@@ -215,4 +214,92 @@ public class TecladoDAO {
         }
         return objeto;
     }
+
+    public ArrayList<Teclado> getListaOrdenadaPorID() {
+        ArrayList<Teclado> listaOrdenada = new ArrayList<>();
+
+        try (java.sql.Connection conn = getConexao(); java.sql.Statement stmt = conn.createStatement(); ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_teclado ORDER BY id_Teclado")) {
+
+            while (res.next()) {
+                Teclado tec = new Teclado(
+                        res.getString("dimensao"),
+                        res.getString("conectividade"),
+                        res.getInt("id_Teclado"),
+                        res.getString("nome"),
+                        res.getString("tipo"),
+                        res.getFloat("preco"),
+                        res.getString("descricao"),
+                        res.getString("marca"),
+                        res.getString("modelo"),
+                        res.getInt("qtd_estoque"),
+                        res.getString("data_cadastro")
+                );
+                listaOrdenada.add(tec);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return listaOrdenada;
+    }
+
+    public ArrayList<Teclado> getListaOrdenadaPorPreco() {
+        ArrayList<Teclado> listaOrdenada = new ArrayList<>();
+
+        try (java.sql.Connection conn = getConexao(); java.sql.Statement stmt = conn.createStatement(); ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_teclado ORDER BY preco")) {
+
+            while (res.next()) {
+                Teclado tec = new Teclado(
+                        res.getString("dimensao"),
+                        res.getString("conectividade"),
+                        res.getInt("id_Teclado"),
+                        res.getString("nome"),
+                        res.getString("tipo"),
+                        res.getFloat("preco"),
+                        res.getString("descricao"),
+                        res.getString("marca"),
+                        res.getString("modelo"),
+                        res.getInt("qtd_estoque"),
+                        res.getString("data_cadastro")
+                );
+                listaOrdenada.add(tec);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return listaOrdenada;
+    }
+
+    public ArrayList<Teclado> getProdutosEsgotados() {
+        ArrayList<Teclado> produtosEsgotados = new ArrayList<>();
+
+        try (java.sql.Connection conn = getConexao(); java.sql.Statement stmt = conn.createStatement(); ResultSet res = stmt.executeQuery("SELECT * FROM produtos.tb_teclado WHERE qtd_estoque = 0")) {
+
+            while (res.next()) {
+                Teclado tec = new Teclado(
+                        res.getString("dimensao"),
+                        res.getString("conectividade"),
+                        res.getInt("id_Teclado"),
+                        res.getString("nome"),
+                        res.getString("tipo"),
+                        res.getFloat("preco"),
+                        res.getString("descricao"),
+                        res.getString("marca"),
+                        res.getString("modelo"),
+                        res.getInt("qtd_estoque"),
+                        res.getString("data_cadastro")
+                );
+                produtosEsgotados.add(tec);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return produtosEsgotados;
+    }
+
 }

@@ -249,7 +249,7 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
             } else {
                 descricao = this.c_descricao.getText();
             }
-            data_cadastro = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            data_cadastro = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 //            if (this.c_data.getDate() == null) { 
 //                throw new Mensagens("Insira uma data valida");
 //            } else {

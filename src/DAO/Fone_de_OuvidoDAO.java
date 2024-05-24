@@ -215,4 +215,94 @@ public class Fone_de_OuvidoDAO {
         }
         return objeto;
     }
+    public ArrayList<Fone_de_Ouvido> getListaOrdenadaPorID() {
+    ArrayList<Fone_de_Ouvido> listaOrdenada = new ArrayList<>();
+
+    try (Connection conn = getConexao();
+         Statement stmt = conn.createStatement();
+         ResultSet res = stmt.executeQuery("SELECT * FROM tb_Fone_de_Ouvido ORDER BY ID")) {
+
+        while (res.next()) {
+            Fone_de_Ouvido fone = new Fone_de_Ouvido(
+                res.getString("conectividade_do_fone"),
+                res.getString("material"),
+                res.getInt("id"),
+                res.getString("nome"),
+                res.getString("tipo"),
+                res.getFloat("preco"),
+                res.getString("descricao"),
+                res.getString("marca"),
+                res.getString("modelo"),
+                res.getInt("qtd_estoque"),
+                res.getString("data_cadastro")
+            );
+            listaOrdenada.add(fone);
+        }
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+
+    return listaOrdenada;
+}
+   public ArrayList<Fone_de_Ouvido> getListaOrdenadaPorPreco() {
+    ArrayList<Fone_de_Ouvido> listaOrdenada = new ArrayList<>();
+
+    try (Connection conn = getConexao();
+         Statement stmt = conn.createStatement();
+         ResultSet res = stmt.executeQuery("SELECT * FROM tb_Fone_de_Ouvido ORDER BY preco")) {
+
+        while (res.next()) {
+            Fone_de_Ouvido fone = new Fone_de_Ouvido(
+                res.getString("conectividade_do_fone"),
+                res.getString("material"),
+                res.getInt("id"),
+                res.getString("nome"),
+                res.getString("tipo"),
+                res.getFloat("preco"),
+                res.getString("descricao"),
+                res.getString("marca"),
+                res.getString("modelo"),
+                res.getInt("qtd_estoque"),
+                res.getString("data_cadastro")
+            );
+            listaOrdenada.add(fone);
+        }
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+
+    return listaOrdenada;
+}
+   public ArrayList<Fone_de_Ouvido> getProdutosEsgotados() {
+    ArrayList<Fone_de_Ouvido> produtosEsgotados = new ArrayList<>();
+
+    try (Connection conn = getConexao();
+         Statement stmt = conn.createStatement();
+         ResultSet res = stmt.executeQuery("SELECT * FROM tb_Fone_de_Ouvido WHERE qtd_estoque = 0")) {
+
+        while (res.next()) {
+            Fone_de_Ouvido fone = new Fone_de_Ouvido(
+                res.getString("conectividade_do_fone"),
+                res.getString("material"),
+                res.getInt("id"),
+                res.getString("nome"),
+                res.getString("tipo"),
+                res.getFloat("preco"),
+                res.getString("descricao"),
+                res.getString("marca"),
+                res.getString("modelo"),
+                res.getInt("qtd_estoque"),
+                res.getString("data_cadastro")
+            );
+            produtosEsgotados.add(fone);
+        }
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+
+    return produtosEsgotados;
+}
 }

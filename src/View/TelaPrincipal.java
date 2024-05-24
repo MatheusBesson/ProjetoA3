@@ -33,6 +33,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroprodutos_TP = new javax.swing.JMenu();
         cadastrarteclado_TP = new javax.swing.JMenuItem();
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -77,6 +79,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroprodutos_TP.add(cadastrar_fonedeouvido_TP);
 
         ferramentas_TP.add(cadastroprodutos_TP);
+
+        jMenu1.setText("Gerar Relatorio");
+
+        jMenuItem2.setText("Gerar Relatorio Fone");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+
+        ferramentas_TP.add(jMenu1);
 
         jMenuBar1.add(ferramentas_TP);
 
@@ -139,6 +153,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
        objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Relatorio_Fone objeto = new Relatorio_Fone();
+        objeto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -184,7 +203,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem gerenciarTeclado_TP;
     private javax.swing.JMenu gerenciar_fone_de_ouvido_TP;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     // End of variables declaration//GEN-END:variables
 }

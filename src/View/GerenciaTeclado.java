@@ -268,12 +268,23 @@ public class GerenciaTeclado extends javax.swing.JFrame {
             } else {
                 throw new Mensagens("Tipo de produto inválido!");
             }
+             try {
+                float preco2 = Float.parseFloat(this.preco_GT.getText());
 
-            if (this.preco_GT.getText().length() < 1 || this.preco_GT.getText().length() > 50000) {
+                if (preco2 < 0 || preco2 > 50000) {
+                    throw new Mensagens("O preço não pode ser menor que ZERO ou maior que CINQUENTA MIL!");
+                } else {
+                   preco_teclado = Float.parseFloat(this.preco_GT.getText());
+                }
+            } catch (NumberFormatException e) {
+                throw new Mensagens("O valor inserido não é um número válido!");
+            }
+
+          /*  if (this.preco_GT.getText().length() < 1 || this.preco_GT.getText().length() > 50000) {
                 throw new Mensagens("O preço não pode ser menor que UM ou maior que CINQUENTA MIL!");
             } else {
                 preco_teclado = Float.parseFloat(this.preco_GT.getText());
-            }
+            } */
             if (this.descricao_GT.getText().length() > 250) {
                 throw new Mensagens("Descrição muito longa! Máximo 250 caracteres!");
             }
@@ -305,12 +316,12 @@ public class GerenciaTeclado extends javax.swing.JFrame {
                 datacadastro_teclado = sdf.format(this.datacadastro_GT.getDate());
             }
 
-            if (this.dimensao_GT.getText().length() < 0 || this.dimensao_GT.getText().length() > 50) {
+            if (this.dimensao_GT.getText().length() < 1 || this.dimensao_GT.getText().length() > 50) {
                 throw new Mensagens("O campo de dimensão deve conter de UM até 50 caracteres!");
             } else {
                 dimensao_teclado = this.dimensao_GT.getText();
             }
-            if (this.conectividade_GT.getText().length() < 0 || this.dimensao_GT.getText().length() > 100) {
+            if (this.conectividade_GT.getText().length() < 1 || this.dimensao_GT.getText().length() > 100) {
                 throw new Mensagens("O campo de conectividade deve conter de UM até 50 caracteres!");
             } else {
                 conectividade_teclado = this.conectividade_GT.getText();

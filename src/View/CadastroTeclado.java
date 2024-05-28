@@ -404,13 +404,13 @@ public class CadastroTeclado extends javax.swing.JFrame {
             }
             descricao_teclado = this.descricao_CT.getText();
 
-            if (this.dimensao_CT.getText().length() < 0 || this.dimensao_CT.getText().length() > 50) {
-                throw new Mensagens("O campo de dimensão deve conter de UM até 50 caracteres!");
+            if (this.dimensao_CT.getText().length() < 1 || this.dimensao_CT.getText().length() > 50) {
+                throw new Mensagens("O campo de dimensão não pode ser nulo ou maior que 50 caracteres!");
             } else {
                 dimensao_teclado = this.dimensao_CT.getText();
             }
-            if (this.conectividade_CT.getText().length() < 0 || this.dimensao_CT.getText().length() > 100) {
-                throw new Mensagens("O campo de conectividade deve conter de UM até 50 caracteres!");
+            if (this.conectividade_CT.getText().length() < 1 || this.dimensao_CT.getText().length() > 100) {
+                throw new Mensagens("O campo de conectividade não pode ser nulo ou maior que 50 caracteres!");
             } else {
                 conectividade_teclado = this.conectividade_CT.getText();
             }                                                                       // dimensao, conectividade, id, nome, tipo, preco, descricao, marca, modelo, qtd_estoque, data_cadastro;

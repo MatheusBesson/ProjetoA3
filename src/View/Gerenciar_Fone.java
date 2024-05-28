@@ -62,7 +62,6 @@ public class Gerenciar_Fone extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setTitle("Gerenciamento Fone de Ouvido");
-        setMaximumSize(new java.awt.Dimension(1087, 593));
         setMinimumSize(new java.awt.Dimension(1087, 593));
         setPreferredSize(new java.awt.Dimension(1087, 593));
         setResizable(false);

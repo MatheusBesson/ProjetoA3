@@ -35,9 +35,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         cadastroprodutos_TP = new javax.swing.JMenu();
         cadastrarteclado_TP = new javax.swing.JMenuItem();
         cadastrar_fonedeouvido_TP = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jmenuRelatorioTeclado = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         gerenciar_fone_de_ouvido_TP = new javax.swing.JMenu();
         gerenciarTeclado_TP = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -107,26 +104,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         ferramentas_TP.add(cadastroprodutos_TP);
 
-        jMenu1.setText("Gerar Relatorio");
-
-        jmenuRelatorioTeclado.setText("Relatório Teclado");
-        jmenuRelatorioTeclado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmenuRelatorioTecladoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jmenuRelatorioTeclado);
-
-        jMenuItem2.setText("Relatorio Fone");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMenuItem2);
-
-        ferramentas_TP.add(jMenu1);
-
         jMenuBar1.add(ferramentas_TP);
 
         gerenciar_fone_de_ouvido_TP.setText("Periféricos");
@@ -188,16 +165,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
        objeto.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Relatorio_Fone objeto = new Relatorio_Fone();
-        objeto.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jmenuRelatorioTecladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuRelatorioTecladoActionPerformed
-        RelatorioTeclado objeto = new RelatorioTeclado();
-        objeto.setVisible(true);
-    }//GEN-LAST:event_jmenuRelatorioTecladoActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         RelatorioTeclado objeto = new RelatorioTeclado();
         objeto.setVisible(true);
@@ -255,10 +222,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jmenuRelatorioTeclado;
     // End of variables declaration//GEN-END:variables
 }

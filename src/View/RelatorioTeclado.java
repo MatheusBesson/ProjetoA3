@@ -148,12 +148,12 @@ public class RelatorioTeclado extends javax.swing.JFrame {
                 a.getId(),
                 a.getNome(),
                 a.getTipo(),
-                a.getPreco(),
-                a.getDescricao(),
                 a.getMarca(),
                 a.getModelo(),
+                a.getPreco(),
                 a.getQtd_estoque(),
                 a.getData_cadastro(),
+                a.getDescricao(),
                 a.getDimensao(),
                 a.getConectividade(),});
         }
@@ -172,12 +172,12 @@ public class RelatorioTeclado extends javax.swing.JFrame {
                 a.getId(),
                 a.getNome(),
                 a.getTipo(),
-                a.getPreco(),
-                a.getDescricao(),
                 a.getMarca(),
                 a.getModelo(),
+                a.getPreco(),
                 a.getQtd_estoque(),
                 a.getData_cadastro(),
+                a.getDescricao(),
                 a.getDimensao(),
                 a.getConectividade(),});
         }
@@ -197,12 +197,14 @@ public class RelatorioTeclado extends javax.swing.JFrame {
                 produto.getId(),
                 produto.getNome(),
                 produto.getTipo(),
-                produto.getPreco(),
-                produto.getDescricao(),
                 produto.getMarca(),
                 produto.getModelo(),
+                produto.getPreco(),
+                //produto.getMarca(),
+                // produto.getModelo(),
                 produto.getQtd_estoque(),
                 produto.getData_cadastro(),
+                produto.getDescricao(),
                 produto.getDimensao(),
                 produto.getConectividade(),});
         }
@@ -257,14 +259,15 @@ public class RelatorioTeclado extends javax.swing.JFrame {
                 a.getId(),
                 a.getNome(),
                 a.getTipo(),
-                a.getPreco(),
-                a.getDescricao(),
                 a.getMarca(),
                 a.getModelo(),
+                a.getPreco(),
                 a.getQtd_estoque(),
                 a.getData_cadastro(),
+                a.getDescricao(),
                 a.getDimensao(),
                 a.getConectividade(),});
+
             quantidadeTotalEstoque += a.getQtd_estoque(); // Adiciona a quantidade de estoque deste produto à quantidade total
 
         }

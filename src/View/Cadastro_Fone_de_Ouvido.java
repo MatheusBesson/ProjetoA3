@@ -57,13 +57,13 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         c_qtd_estoque = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        c_tipo = new javax.swing.JComboBox<>();
         c_material = new javax.swing.JTextField();
         c_conectividade = new javax.swing.JComboBox<>();
         b_cancelar = new javax.swing.JButton();
         b_cadastrar = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        c_tipo = new javax.swing.JComboBox<>();
         c_data = new com.toedter.calendar.JDateChooser();
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -136,6 +136,21 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel12.setText("Material:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 340, 60, -1));
 
+        c_tipo.setBackground(new java.awt.Color(255, 102, 51));
+        c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
+        c_tipo.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                c_tipoComponentAdded(evt);
+            }
+        });
+        c_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                c_tipoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 130, -1));
+        c_tipo.setVisible(false);
+
         c_material.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 c_materialActionPerformed(evt);
@@ -174,20 +189,6 @@ public class Cadastro_Fone_de_Ouvido extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CANVA IMAGEM app (3).png"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 480));
-
-        c_tipo.setBackground(new java.awt.Color(255, 102, 51));
-        c_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fone de Ouvido" }));
-        c_tipo.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                c_tipoComponentAdded(evt);
-            }
-        });
-        c_tipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                c_tipoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(c_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 130, -1));
 
         c_data.setDateFormatString("dd '/' MM '/' y");
         c_data.setMinSelectableDate(new java.util.Date(-62135755087000L));
